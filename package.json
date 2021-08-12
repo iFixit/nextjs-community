@@ -5,6 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "lint": "eslint .",
+    "test": "jest",
     "start": "next start"
   },
   "dependencies": {
