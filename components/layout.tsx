@@ -4,7 +4,9 @@ import Header from './header';
 
 export const siteTitle = 'Community'
 
-export default function Layout({ children }) {
+export default function Layout({ children } : {
+    children: React.ReactNode
+  })  {
   return (
     <div className={styles.container}>
       <Head>
