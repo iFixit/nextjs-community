@@ -7,6 +7,11 @@ COPY package.json yarn.lock ./
 RUN yarn install --frozen-lockfile
 
 # Rebuild the source code only when needed
+FROM deps AS tester
+COPY . .
+CMD ["yarn", "test"]
+
+# Rebuild the source code only when needed
 FROM node:16-alpine3.13 AS builder
 WORKDIR /app
 COPY . .
