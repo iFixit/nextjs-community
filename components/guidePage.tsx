@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import styles from '../styles/guidePage.module.css'
+import Footer from './footer';
 import Header from './header';
 
 export const siteTitle = 'Community'
@@ -24,10 +25,9 @@ export default function GuidePage({ children } : {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header className={styles.header}>
-        <Header/>
-      </header>
+      <Header/>
       <main className={styles.main}>{children}</main>
+      <Footer/>
     </div>
   )
 }

@@ -1,0 +1,7 @@
+.container {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    height: 68px;
+}
