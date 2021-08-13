@@ -1,11 +1,6 @@
 .main {
+    margin: 0 auto;
     max-width: 998px;
-}
-  
-.header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .backToHome {

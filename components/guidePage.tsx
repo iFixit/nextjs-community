@@ -8,7 +8,7 @@ export default function GuidePage({ children } : {
     children: React.ReactNode
   })  {
   return (
-    <div className={styles.main}>
+    <div>
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -27,7 +27,7 @@ export default function GuidePage({ children } : {
       <header className={styles.header}>
         <Header/>
       </header>
-      <main>{children}</main>
+      <main className={styles.main}>{children}</main>
     </div>
   )
 }
