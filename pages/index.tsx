@@ -1,10 +1,10 @@
 import Head from 'next/head'
 import InfoDisplay from '../components/community/info';
-import Layout, { siteTitle } from '../components/layout'
+import GuidePage, { siteTitle } from '../components/guidePage'
 
 export default function LandingPage() {
   return (
-    <Layout>
+    <GuidePage>
       <Head>
         <title>{siteTitle}</title>
       </Head>
@@ -12,6 +12,6 @@ export default function LandingPage() {
         <h1>Community</h1>
       </section>
       <InfoDisplay/>
-    </Layout>
+    </GuidePage>
   )
 }

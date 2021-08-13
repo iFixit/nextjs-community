@@ -1,14 +1,14 @@
 import Head from 'next/head'
-import styles from '../styles/layout.module.css'
+import styles from '../styles/guidePage.module.css'
 import Header from './header';
 
 export const siteTitle = 'Community'
 
-export default function Layout({ children } : {
+export default function GuidePage({ children } : {
     children: React.ReactNode
   })  {
   return (
-    <div className={styles.container}>
+    <div className={styles.main}>
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
