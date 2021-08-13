@@ -338,10 +338,10 @@
   "resolved" "https://registry.npmjs.org/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz"
   "version" "0.2.3"
 
-"@core-ds/primitives@^2.0.0":
-  "integrity" "sha512-rfPtt81U8meTEwmo5tUGrSrOaDIvWtpm6517P6FnSF4Khy66HzZq5AwyU8Xm0vtVxvFmNSWYxfSvdHxKwqrSjw=="
-  "resolved" "https://registry.npmjs.org/@core-ds/primitives/-/primitives-2.0.0.tgz"
-  "version" "2.0.0"
+"@core-ds/primitives@^1.5.0":
+  "integrity" "sha512-wOd/FZaVW1laDbY6D63a80xCagmhiqpTgM0/bEJEOhGz39DCBDZUdUmxrWc2N/PfgEFf2CMu3JPiIy0S6GZPHQ=="
+  "resolved" "https://registry.npmjs.org/@core-ds/primitives/-/primitives-1.5.0.tgz"
+  "version" "1.5.0"
 
 "@eslint/eslintrc@^0.4.3":
   "integrity" "sha512-J6KFFz5QCYUJq3pf0mjEcCJVERbzv71PUIDczuh9JkwGEzced6CO5ADLHB1rbf/+oPBtoPfMYNOpGDzCANlbXw=="
