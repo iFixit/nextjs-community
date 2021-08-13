@@ -1,10 +1,10 @@
-import utilStyles from '../../styles/utils.module.css'
+import React from 'react'
 
 export default function VideoDisplay() {
     return (
-        <section className={utilStyles.headingMd}>
+        <React.Fragment>
           <h1>Video</h1>
-        </section>
+        </React.Fragment>
     )
 }
   

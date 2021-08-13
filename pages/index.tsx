@@ -1,5 +1,8 @@
 import Head from 'next/head'
+import React from 'react'
+import ActivityDisplay from '../components/community/activity';
 import InfoDisplay from '../components/community/info';
+import NavigationDisplay from '../components/community/navigation';
 import GuidePage, { siteTitle } from '../components/guidePage'
 
 export default function LandingPage() {
@@ -8,10 +11,9 @@ export default function LandingPage() {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section>
-        <h1>Community</h1>
-      </section>
+      <NavigationDisplay/>
       <InfoDisplay/>
+      <ActivityDisplay/>
     </GuidePage>
   )
 }

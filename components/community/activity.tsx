@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function OptionsDisplay() {
+export default function ActivityDisplay() {
     return (
         <React.Fragment>
-          <h1>Options</h1>
+          <h1>Activity</h1>
         </React.Fragment>
     )
 }
