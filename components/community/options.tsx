@@ -1,14 +1,14 @@
 import React from 'react'
 import Image from 'next/image'
 import styles from '../../styles/options.module.css'
-import { Button, Stack } from "@chakra-ui/react"
+import { Button, Flex, Stack } from "@chakra-ui/react"
 import { Box, Heading, Text } from '@chakra-ui/layout'
 import { getImage } from '../../lib/images'
 import { Link } from "@chakra-ui/react"
 
 function OptionCard() {
   return (
-    <Stack align='center' className={styles.optionCard}>
+    <Flex direction='column' align='center' className={styles.optionCard}>
       <Box className={styles.cardImage}>
         <Image src={getImage('Community/solve')} alt='' layout='fill'/>
       </Box>
@@ -25,7 +25,7 @@ function OptionCard() {
       <Link href='https://www.ifixit.com/Answers'>
         <Button>{'Answers Forum'}</Button>
       </Link>
-    </Stack>
+    </Flex>
   );
 }
 

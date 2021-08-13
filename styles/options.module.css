@@ -24,11 +24,11 @@
     overflow: hidden;
     width: 80px;
     height: 80px;
-    margin: var(--space-7) auto var(--space-5);
+    margin: calc(-1 * var(--space-7)) auto var(--space-5);
     flex: 0 0 auto;
     border-radius: 50px;
-    background-color: hsla(214.444, 88.52%, 52.16%, 1);
-    box-shadow: rgb(25 117 241 / 16%) 0px 14px 20px -4px;
+    background-color: var(--color-blue);
+    box-shadow: var(--shadow-2);
     object-fit: scale-down;
 }
 

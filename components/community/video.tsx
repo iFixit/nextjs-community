@@ -1,12 +1,12 @@
-import { AspectRatio, Box, Button, Heading, Link, Stack, Text } from '@chakra-ui/react'
+import { AspectRatio, Box, Button, Flex, Heading, Link, Text } from '@chakra-ui/react'
 import React from 'react'
 import styles from '../../styles/video.module.css'
 
 export default function VideoDisplay() {
     return (
         <React.Fragment>
-          <Stack direction='row' className={styles.container}>
-            <Stack direction='column' justify='space-between' className={styles.videoText}>
+          <Flex direction='row' className={styles.container}>
+            <Flex direction='column' justify='space-between' className={styles.videoText}>
               <Heading fontSize='24px' className={styles.title}>{'Contribute to iFixit'}</Heading>
               <Text fontSize='16px' className={styles.description}> 
                 {'No one knows how to fix everything,\
@@ -18,7 +18,7 @@ export default function VideoDisplay() {
               <Link href='https://www.ifixit.com/New'>
                 <Button>{'Start a New Page'}</Button>
               </Link>
-            </Stack>
+            </Flex>
             <AspectRatio w={'50%'}>
               <iframe
                 title="naruto"
@@ -26,7 +26,7 @@ export default function VideoDisplay() {
                 allowFullScreen
               />
             </AspectRatio>
-          </Stack>
+          </Flex>
         </React.Fragment>
     )
 }
