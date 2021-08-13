@@ -1,0 +1,20 @@
+.container {
+    background-color: var(--color-black);
+    margin-top: var(--space-10);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+}
+
+.videoText {
+    width: 50%;
+    padding: var(--space-8) var(--space-10);
+    margin: var(--space-5) var(--space-0);
+}
+
+.title {
+    color: var(--color-white);
+}
+
+.description {
+    color: var(--color-gray-3);
+}
