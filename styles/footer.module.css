@@ -1,6 +1,6 @@
 .container {
     display: flex;
     align-items: center;
-    background-color: var(--color-gray-6);
+    background-color: var(--color-gray-1);
     height: 852px;
 }
