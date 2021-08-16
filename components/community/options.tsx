@@ -59,7 +59,7 @@ function OptionCard({ option }: { option: Option }) {
   return (
     <Flex direction='column' align='center' className={styles.optionCard}>
       <Box className={styles.cardImage}>
-        <Image src={option.image} alt='' layout='fill'/>
+        <Image src={option.image} alt='' layout='fill' objectFit='cover'/>
       </Box>
       <Box className={styles.cardIcon}>
         <Image src={option.icon} alt='' layout='fill'/>
