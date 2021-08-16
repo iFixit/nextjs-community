@@ -72,7 +72,7 @@ function OptionCard({ option }: { option: Option }) {
             padding='9px 16px 10px'
             fontSize='14px'
             border='1px solid var(--color-gray-3)'
-            backgroundColor='transparent'>{'Answers Forum'}</Button>
+            backgroundColor='transparent'>{option.button}</Button>
         </Link>
       </Flex>
     </Flex>
