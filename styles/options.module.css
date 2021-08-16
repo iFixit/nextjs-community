@@ -4,6 +4,7 @@
     min-height: 415px;
     border-radius: var(--border-radius-lg);
     box-shadow: var(--shadow-3);
+    padding-bottom: var(--space-6);
 }
 
 .cardImage {
@@ -35,4 +36,19 @@
 .cardText {
     padding: 0 var(--space-5);
     flex-grow: 1;
+}
+
+.title {
+    color: var(--color-gray-8);
+}
+
+.description {
+    color: var(--color-gray-6);
+    padding: var(--space-2) 0;
+    margin-bottom: var(--space-5);
+    flex-grow: 1;
+}
+
+.link {
+    padding: 9px 16px 10px;
 }
