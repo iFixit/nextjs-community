@@ -1,4 +1,5 @@
 .container {
+    flex-direction: row;
     background-color: var(--color-black);
     margin-top: var(--space-10);
     border-radius: var(--border-radius-lg);
@@ -17,4 +18,28 @@
 
 .description {
     color: var(--color-gray-3);
+    margin: var(--space-4) 0;
+}
+
+.video {
+    width: 50%;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        height: 600px;
+        margin-top: var(--space-7);
+    }
+
+    .videoText {
+        width: 100%;
+        height: 50%;
+        padding: var(--space-6) var(--space-8);
+    }
+
+    .video {
+        width: 100%;
+        height: 50%;
+    }
 }

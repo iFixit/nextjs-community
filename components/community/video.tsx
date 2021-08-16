@@ -5,7 +5,7 @@ import styles from '../../styles/video.module.css'
 export default function VideoDisplay() {
     return (
         <React.Fragment>
-          <Flex direction='row' className={styles.container}>
+          <Flex className={styles.container}>
             <Flex direction='column' justify='space-between' className={styles.videoText}>
               <Heading fontSize='24px' className={styles.title}>{'Contribute to iFixit'}</Heading>
               <Text fontSize='16px' className={styles.description}> 
@@ -26,9 +26,9 @@ export default function VideoDisplay() {
                   }}>{'Start a New Page'}</Button>
               </Link>
             </Flex>
-            <AspectRatio w={'50%'}>
+            <AspectRatio className={styles.video}>
               <iframe
-                title="naruto"
+                title="How to Write a Repair Guide on iFixit.com!"
                 src='https://www.youtube-nocookie.com/embed/O7CSWHVTUT8?rel=0'
                 allowFullScreen
               />
