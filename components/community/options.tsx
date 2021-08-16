@@ -41,7 +41,7 @@ const optionTeach: Option = {
   'description': 'No one knows how to fix everything, but\
     everyone knows how to fix something.',
   'button': 'Create a Guide',
-  'link': 'https://www.ifixit.com/New',
+  'link': 'https://www.ifixit.com/Guide/new',
   'image': getImage('Community/teach'),
   'icon': getImage('Community/teach-icon'),
 }
