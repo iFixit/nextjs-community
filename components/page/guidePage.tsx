@@ -1,7 +1,7 @@
 import Head from 'next/head'
-import styles from '../styles/guidePage.module.css'
-import Footer from './footer';
-import Header from './header';
+import styles from '../../styles/guidePage.module.css'
+import Footer from '../ifixit/footer';
+import Header from '../ifixit/header';
 
 export const siteTitle = 'Community'
 
