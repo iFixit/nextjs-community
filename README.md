@@ -4,3 +4,4 @@ Issues:
 * Responsive styling
 * UserLangPreferences (API)
 * isMod (API)
+* write jest tests
