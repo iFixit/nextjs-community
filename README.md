@@ -5,3 +5,4 @@ Issues:
 * UserLangPreferences (API)
 * isMod (API)
 * write jest tests
+* linting
