@@ -15,8 +15,15 @@ export default function VideoDisplay() {
                 things work longer! The easier it is to\
                 fix something, the more people will do it.'}
               </Text>
-              <Link href='https://www.ifixit.com/New'>
-                <Button>{'Start a New Page'}</Button>
+              <Link _hover={{ textDecoration: 'none'}} href='https://www.ifixit.com/New'>
+                <Button 
+                  className={styles.button} 
+                  variant='outline'
+                  color='var(--color-white)'
+                  _hover={{ 
+                    color: 'var(--color-black)',
+                    backgroundColor: 'var(--color-gray-1)'
+                  }}>{'Start a New Page'}</Button>
               </Link>
             </Flex>
             <AspectRatio w={'50%'}>
