@@ -5,6 +5,7 @@ import { Button, Flex, Stack } from "@chakra-ui/react"
 import { Box, Heading, Text } from '@chakra-ui/layout'
 import { getImage } from '../../lib/images'
 import { Link } from "@chakra-ui/react"
+import { isEnglish } from '../../lib/lang'
 
 interface Option {
   title: string;
@@ -85,7 +86,9 @@ export default function OptionsDisplay() {
           <Stack direction='row' justify='space-between' spacing='20px'>
             <OptionCard option={optionSolve}/>
             <OptionCard option={optionImprove}/>
-            <OptionCard option={optionTeach}/>
+            {isEnglish() ? 
+              <OptionCard option={optionTeach}/> : 
+              <OptionCard option={optionTranslate}/>}
           </Stack>
         </React.Fragment>
     )
