@@ -58,17 +58,19 @@ const optionTranslate: Option = {
 
 function OptionCard({ option }: { option: Option }) {
   return (
-    <Flex direction='column' align='center' className={styles.optionCard}>
+    <Flex className={styles.optionCard}>
       <Box className={styles.cardImage}>
         <Image src={option.image} alt='' layout='fill' objectFit='cover'/>
       </Box>
       <Box className={styles.cardIcon}>
         <Image src={option.icon} alt='' layout='fill'/>
       </Box>
-      <Flex className={styles.cardText} align='center' direction='column'>
+      <Flex className={styles.cardText}>
         <Heading className={styles.title} as='h3' fontSize='18px'>{option.title}</Heading>
         <Text className={styles.description} align='center' fontSize='14px'>{option.description}</Text>
-        <Link _hover={{ textDecoration: 'none'}} href={option.link}>
+        <Link className={styles.buttonLink}
+          _hover={{ textDecoration: 'none'}}
+          href={option.link}>
           <Button 
             padding='9px 16px 10px'
             fontSize='14px'
@@ -83,7 +85,11 @@ function OptionCard({ option }: { option: Option }) {
 export default function OptionsDisplay() {
     return (
         <React.Fragment>
-          <Stack direction='row' justify='space-between' spacing='20px'>
+          <Stack 
+            className={styles.optionsContainer} 
+            direction={{ base:'column', md:'row' }}
+            justify='space-between' 
+            spacing='20px'>
             <OptionCard option={optionSolve}/>
             <OptionCard option={optionImprove}/>
             {isEnglish() ? 
