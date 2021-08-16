@@ -6,3 +6,9 @@
 .backToHome {
   margin: 3rem 0 0;
 }
+
+@media screen and (max-width: 1060px) {
+    .main {
+      max-width: 95%;
+  }
+}
