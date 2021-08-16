@@ -6,3 +6,4 @@ Issues:
 * isMod (API)
 * write jest tests
 * linting
+* get GuideURI tags
