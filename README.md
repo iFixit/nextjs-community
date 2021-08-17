@@ -7,3 +7,4 @@ Issues:
 * write jest tests
 * linting
 * get GuideURI tags
+* redirect through tabs
