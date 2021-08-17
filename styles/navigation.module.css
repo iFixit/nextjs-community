@@ -1,0 +1,11 @@
+.header {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: var(--space-8) 0 var(--space-5);
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        justify-content: center;
+    }
+}

@@ -1,5 +1,6 @@
-import { Heading, Tab, TabList, TabPanel, TabPanels, Tabs } from '@chakra-ui/react'
+import { Button, ButtonGroup, Flex, Heading, Tab, TabList, TabPanel, TabPanels, Tabs } from '@chakra-ui/react'
 import React from 'react'
+import styles from '../../styles/navigation.module.css'
 
 const isOnIfixit = true;
 const isMod = true;
@@ -70,7 +71,7 @@ function listTabComponents() {
 }
 
 function listTabPanelComponents() {
-  return tabs.map((tabInfo, i) => {
+  return tabs.map((tabInfo) => {
      return <TabPanel key={tabInfo.label}></TabPanel>;
   });
 }
@@ -78,7 +79,14 @@ function listTabPanelComponents() {
 export default function NavigationDisplay() {
     return (
         <React.Fragment>
-          <Heading as='h1'>Community</Heading>
+          <Flex className={styles.header}>
+            <Heading as='h1'>Community</Heading>
+            <ButtonGroup variant='outline' spacing='var(--space-4)'>
+              <Button borderColor='var(--color-gray-3)'>How this Works</Button>
+              <Button borderColor='var(--color-gray-3)'>Join the Community</Button>
+            </ButtonGroup>
+          </Flex>
+          
           {/* <TabsWrapper> */}
             <Tabs
                isLazy
