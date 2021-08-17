@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import React from 'react'
 import ActivityDisplay from '../components/community/activity';
 import InfoDisplay from '../components/community/info';
