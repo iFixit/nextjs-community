@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import styles from '../../styles/guidePage.module.css'
+import styles from '../../styles/page/guidePage.module.css'
 import Footer from '../ifixit/footer';
 import Header from '../ifixit/header';
 

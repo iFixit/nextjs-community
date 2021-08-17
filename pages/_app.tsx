@@ -1,5 +1,5 @@
 import { AppProps } from 'next/dist/shared/lib/router/router'
-import '../styles/global.css'
+import '../styles/ifixit/global.css'
 import React from 'react'
 import '@core-ds/primitives/core-primitives.css'
 import { ChakraProvider } from '@chakra-ui/react';

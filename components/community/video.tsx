@@ -1,6 +1,6 @@
 import { AspectRatio, Button, Flex, Heading, Link, Text } from '@chakra-ui/react'
 import React from 'react'
-import styles from '../../styles/video.module.css'
+import styles from '../../styles/community/video.module.css'
 
 export default function VideoDisplay() {
     return (

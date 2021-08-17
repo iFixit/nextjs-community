@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import styles from '../../styles/options.module.css'
+import styles from '../../styles/community/options.module.css'
 import { Button, Flex, Stack } from "@chakra-ui/react"
 import { Box, Heading, Text } from '@chakra-ui/layout'
 import { getImage } from '../../lib/images'

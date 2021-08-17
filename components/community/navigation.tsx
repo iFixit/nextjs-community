@@ -1,7 +1,7 @@
 import { Box, Button, ButtonGroup, Flex, Heading, Tab, TabList, TabPanel, TabPanels, Tabs } from '@chakra-ui/react'
 import { useRouter } from 'next/dist/client/router';
 import React from 'react'
-import styles from '../../styles/navigation.module.css'
+import styles from '../../styles/community/navigation.module.css'
 
 const isOnIfixit = true;
 const isMod = true;
