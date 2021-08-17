@@ -70,7 +70,6 @@
         flex-direction: row;
         width: 100%;
         padding: var(--space-4);
-        height: 112px;
         box-shadow: var(--shadow-2);
     }
 
