@@ -10,9 +10,6 @@ export const siteTitle = 'Community'
 export default function LandingPage() {
   return (
     <GuidePage title={siteTitle}>
-      <Head>
-        <title>{siteTitle}</title>
-      </Head>
       <NavigationDisplay title={siteTitle} />
       <InfoDisplay/>
       <ActivityDisplay/>
