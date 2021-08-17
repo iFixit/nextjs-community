@@ -1,6 +1,8 @@
 .container {
+    position: relative;
     display: flex;
     align-items: center;
     background-color: var(--color-gray-1);
+    margin-top: var(--space-10);
     height: 852px;
 }
