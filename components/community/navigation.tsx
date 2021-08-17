@@ -103,7 +103,7 @@ export default function NavigationDisplay({ title }: { title: string }) {
             <ButtonGroup 
               variant='outline' 
               spacing='var(--space-4)'
-              marginTop={{ base:'var(--space-5)', md: 0 }}>
+              marginTop={{ base:'var(--space-4)', md: 0 }}>
               <Button borderColor='var(--color-gray-3)'>How this Works</Button>
               <Button borderColor='var(--color-gray-3)'>Join the Community</Button>
             </ButtonGroup>
