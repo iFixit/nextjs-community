@@ -7,6 +7,9 @@
 }
 
 .videoText {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
     width: 50%;
     padding: var(--space-8) var(--space-10);
     margin: var(--space-5) var(--space-0);

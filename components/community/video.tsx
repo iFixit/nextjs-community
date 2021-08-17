@@ -6,7 +6,7 @@ export default function VideoDisplay() {
     return (
         <React.Fragment>
           <Flex className={styles.container}>
-            <Flex direction='column' justify='space-between' className={styles.videoText}>
+            <Flex className={styles.videoText}>
               <Heading fontSize='24px' className={styles.title}>{'Contribute to iFixit'}</Heading>
               <Text fontSize='16px' className={styles.description}> 
                 {'No one knows how to fix everything,\
