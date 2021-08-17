@@ -1,4 +1,5 @@
-import { Button, ButtonGroup, Flex, Heading, Tab, TabList, TabPanel, TabPanels, Tabs } from '@chakra-ui/react'
+import { Box, Button, ButtonGroup, Flex, Heading, Tab, TabList, TabPanel, TabPanels, Tabs } from '@chakra-ui/react'
+import { useRouter } from 'next/dist/client/router';
 import React from 'react'
 import styles from '../../styles/navigation.module.css'
 
@@ -56,15 +57,20 @@ let tabData: Array<TabData> = [
 
 const tabs = tabData.filter((tab: TabData) => tab.showTab);
 
-function listTabComponents() {
+function ChakraTabs(title: string) {
+  const router = useRouter();
+  const activeTab = getActiveTabIndex(title);
+
   return tabs.map((tab: TabData, index: number) => {
      const url = tab.url;
      const label = tab.label;
      return (
         <Tab
-           key={index}
+          className={index === activeTab ? 'active' : null}
+          key={index}
+          onClick={() => router.push(url)}
         >
-           {label}
+          {label}
         </Tab>
      );
   });
@@ -76,7 +82,19 @@ function listTabPanelComponents() {
   });
 }
 
-export default function NavigationDisplay() {
+function getActiveTabIndex(pageTitle: string) {
+  let index = 0;
+  while (index < tabs.length) {
+     const tab = tabs[index];
+     if (tab.label === pageTitle) {
+        break;
+     }
+     index++;
+  }
+  return index;
+}
+
+export default function NavigationDisplay({ title }: { title: string }) {
     return (
         <React.Fragment>
           <Flex className={styles.header}>
@@ -86,8 +104,7 @@ export default function NavigationDisplay() {
               <Button borderColor='var(--color-gray-3)'>Join the Community</Button>
             </ButtonGroup>
           </Flex>
-          
-          {/* <TabsWrapper> */}
+          <Box className={styles.wrapper}>
             <Tabs
                isLazy
                isFitted
@@ -95,12 +112,12 @@ export default function NavigationDisplay() {
                overflowX="auto"
                padding="3px"
                height="55px"
-               defaultIndex={0}
+               defaultIndex={getActiveTabIndex(title)}
             >
-               <TabList>{listTabComponents()}</TabList>
+               <TabList>{ChakraTabs(title)}</TabList>
                <TabPanels display="none">{listTabPanelComponents()}</TabPanels>
             </Tabs>
-         {/* </TabsWrapper> */}
+         </Box>
         </React.Fragment>
     )
 }

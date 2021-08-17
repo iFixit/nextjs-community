@@ -3,9 +3,8 @@ import styles from '../../styles/guidePage.module.css'
 import Footer from '../ifixit/footer';
 import Header from '../ifixit/header';
 
-export const siteTitle = 'Community'
-
-export default function GuidePage({ children } : {
+export default function GuidePage({ title, children } : {
+    title: string,
     children: React.ReactNode
   })  {
   return (
@@ -19,10 +18,10 @@ export default function GuidePage({ children } : {
         <meta
           property="og:image"
           content={`https://og-image.vercel.app/${encodeURI(
-            siteTitle
+            title
           )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
         />
-        <meta name="og:title" content={siteTitle} />
+        <meta name="og:title" content={title} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <Header/>

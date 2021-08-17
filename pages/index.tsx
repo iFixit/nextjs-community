@@ -3,15 +3,17 @@ import React from 'react'
 import ActivityDisplay from '../components/community/activity';
 import InfoDisplay from '../components/community/info';
 import NavigationDisplay from '../components/community/navigation';
-import GuidePage, { siteTitle } from '../components/page/guidePage';
+import GuidePage from '../components/page/guidePage';
+
+export const siteTitle = 'Community'
 
 export default function LandingPage() {
   return (
-    <GuidePage>
+    <GuidePage title={siteTitle}>
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <NavigationDisplay/>
+      <NavigationDisplay title={siteTitle} />
       <InfoDisplay/>
       <ActivityDisplay/>
     </GuidePage>
