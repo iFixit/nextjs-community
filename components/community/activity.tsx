@@ -1,7 +1,8 @@
-import { Avatar, Box, Flex, Heading, SimpleGrid, Text } from '@chakra-ui/react'
+import { Box, Flex, Heading, SimpleGrid, Text } from '@chakra-ui/react'
 import styles from '../../styles/community/activity.module.css'
 import Image from 'next/image'
 import React from 'react'
+import { Link } from "@chakra-ui/react"
 
 const sampleData = {
   title: 'Published a Guide',
@@ -28,7 +29,7 @@ function ActivityCard() {
             height={40} />
         </Box>
         <Flex direction='column' className={styles.text}>
-          <Text fontSize={14} fontWeight='bold'>{sampleData.author}</Text>
+          <Link href={sampleData.user_url} fontSize={14} fontWeight='bold'>{sampleData.author}</Link>
           <Text color='var(--color-gray-5)' fontSize={14}>{sampleData.title}</Text>
         </Flex>
       </Flex>
