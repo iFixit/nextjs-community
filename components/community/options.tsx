@@ -1,4 +1,3 @@
-import React from 'react'
 import Image from 'next/image'
 import styles from '../../styles/community/options.module.css'
 import { Button, Flex, Stack } from "@chakra-ui/react"
@@ -97,19 +96,17 @@ function OptionCard({ option }: { option: Option }) {
 
 export default function OptionsDisplay() {
     return (
-        <React.Fragment>
-          <Stack 
-            className={styles.optionsContainer} 
-            direction={{ base:'column', md:'row' }}
-            marginTop={{ base:'var(--space-2)', md:'var(--space-7)' }}
-            justify='space-between' 
-            spacing='20px'>
-            <OptionCard option={optionSolve}/>
-            <OptionCard option={optionImprove}/>
-            {isEnglish() ? 
-              <OptionCard option={optionTeach}/> : 
-              <OptionCard option={optionTranslate}/>}
-          </Stack>
-        </React.Fragment>
+      <Stack 
+        className={styles.optionsContainer} 
+        direction={{ base:'column', md:'row' }}
+        marginTop={{ base:'var(--space-2)', md:'var(--space-7)' }}
+        justify='space-between' 
+        spacing='20px'>
+        <OptionCard option={optionSolve}/>
+        <OptionCard option={optionImprove}/>
+        {isEnglish() ? 
+          <OptionCard option={optionTeach}/> : 
+          <OptionCard option={optionTranslate}/>}
+      </Stack>
     )
 }
