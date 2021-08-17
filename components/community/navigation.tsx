@@ -59,14 +59,12 @@ const tabs = tabData.filter((tab: TabData) => tab.showTab);
 
 function ChakraTabs(title: string) {
   const router = useRouter();
-  const activeTab = getActiveTabIndex(title);
 
   return tabs.map((tab: TabData, index: number) => {
      const url = tab.url;
      const label = tab.label;
      return (
         <Tab
-          className={index === activeTab ? 'active' : null}
           key={index}
           onClick={() => router.push(url)}
         >
