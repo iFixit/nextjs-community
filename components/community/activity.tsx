@@ -15,21 +15,21 @@ const sampleData = {
 function ActivityCard() {
   return (
     <Flex className={styles.card} direction='column'>
-      <Box className={styles.cardImage}>
-        <Image src={sampleData.activity_img} alt='' width={400} height={250} />
+      <Box className={`${styles.cardImage} ${styles.activityImage}`}>
+        <Image src={sampleData.activity_img} alt='' layout='fill' objectFit='cover'/>
       </Box>
-      <Flex>
+      <Flex className={styles.details}>
         <Box className={styles.cardImage}>
           <Image 
-            className={`${styles.cardImage} ${styles.avatar}`}
+            className={styles.avatar}
             src={sampleData.user_img} 
             alt=''
             width={40} 
             height={40} />
         </Box>
-        <Flex direction='column'>
-          <Text fontWeight='bold'>{sampleData.author}</Text>
-          <Text>{sampleData.title}</Text>
+        <Flex direction='column' className={styles.text}>
+          <Text fontSize={14} fontWeight='bold'>{sampleData.author}</Text>
+          <Text color='var(--color-gray-5)' fontSize={14}>{sampleData.title}</Text>
         </Flex>
       </Flex>
     </Flex>
