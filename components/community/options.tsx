@@ -58,18 +58,31 @@ const optionTranslate: Option = {
 
 function OptionCard({ option }: { option: Option }) {
   return (
-    <Flex className={styles.optionCard}>
-      <Box className={styles.cardImage}>
+    <Flex 
+      className={styles.optionCard}
+      direction={{ base:'row', md:'column' }}
+      boxShadow={{ base:'var(--shadow-2)', md:'var(--shadow-3)' }}
+      padding={{ base:'var(--space-4)', md:'0 0 var(--space-6)' }}
+      width={{ base:'100%', md:'350px' }}>
+      <Box 
+        className={styles.cardImage}
+        display={{ base:'none', md:'flex' }}>
         <Image src={option.image} alt='' layout='fill' objectFit='cover'/>
       </Box>
-      <Box className={styles.cardIcon}>
+      <Box 
+        className={styles.cardIcon}
+        margin={{ base:'0', md:'calc(-1 * var(--space-7)) auto var(--space-5)' }}>
         <Image src={option.icon} alt='' layout='fill'/>
       </Box>
-      <Flex className={styles.cardText}>
+      <Flex 
+        className={styles.cardText}>
         <Heading className={styles.title} as='h3' fontSize='18px'>{option.title}</Heading>
-        <Text className={styles.description} align='center' fontSize='14px'>{option.description}</Text>
+        <Text 
+          className={styles.description}
+          margin={{ base: 0, md: '0 0 var(--space-5)' }}>{option.description}</Text>
         <Link className={styles.buttonLink}
           _hover={{ textDecoration: 'none'}}
+          display={{ base:'none', md:'inline-flex' }}
           href={option.link}>
           <Button 
             padding='9px 16px 10px'
@@ -88,6 +101,7 @@ export default function OptionsDisplay() {
           <Stack 
             className={styles.optionsContainer} 
             direction={{ base:'column', md:'row' }}
+            marginTop={{ base:'var(--space-2)', md:'var(--space-7)' }}
             justify='space-between' 
             spacing='20px'>
             <OptionCard option={optionSolve}/>

@@ -95,9 +95,15 @@ function getActiveTabIndex(pageTitle: string) {
 export default function NavigationDisplay({ title }: { title: string }) {
     return (
         <React.Fragment>
-          <Flex className={styles.header}>
+          <Flex 
+            className={styles.header}
+            direction={{ base:'column', md:'row' }}
+            justify={{ base:'center', md:'space-between' }}>
             <Heading as='h1'>Community</Heading>
-            <ButtonGroup variant='outline' spacing='var(--space-4)'>
+            <ButtonGroup 
+              variant='outline' 
+              spacing='var(--space-4)'
+              marginTop={{ base:'var(--space-5)', md: 0 }}>
               <Button borderColor='var(--color-gray-3)'>How this Works</Button>
               <Button borderColor='var(--color-gray-3)'>Join the Community</Button>
             </ButtonGroup>

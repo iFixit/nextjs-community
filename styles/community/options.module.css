@@ -6,11 +6,8 @@
     flex-direction: column;
     align-items: center;
     overflow: hidden;
-    width: 350px;
     min-height: 100%;
     border-radius: var(--border-radius-lg);
-    box-shadow: var(--shadow-3);
-    padding-bottom: var(--space-6);
 }
 
 .cardImage {
@@ -31,7 +28,6 @@
     overflow: hidden;
     width: 80px;
     height: 80px;
-    margin: calc(-1 * var(--space-7)) auto var(--space-5);
     flex: 0 0 auto;
     border-radius: 50px;
     background-color: var(--color-blue);
@@ -53,43 +49,11 @@
 .description {
     color: var(--color-gray-6);
     padding: var(--space-2) 0;
-    margin-bottom: var(--space-5);
     flex-grow: 1;
+    text-align: center;
+    font-size: 14px;
 }
 
 .link {
     padding: 9px 16px 10px;
-}
-
-@media screen and (max-width: 768px) {
-    .optionsContainer {
-        margin-top: var(--space-2);
-    }
-
-    .optionCard {
-        flex-direction: row;
-        width: 100%;
-        padding: var(--space-4);
-        box-shadow: var(--shadow-2);
-    }
-
-    .cardIcon {
-        margin: 0;
-    }
-
-    .cardImage {
-        display: none;
-    }
-
-    .buttonLink {
-        display: none;
-    }
-
-    .cardText {
-        flex-direction: column;
-    }
-
-    .description {
-        margin: 0;
-    }
 }

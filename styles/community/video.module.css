@@ -27,22 +27,3 @@
 .video {
     width: 50%;
 }
-
-@media screen and (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        height: 600px;
-        margin-top: var(--space-7);
-    }
-
-    .videoText {
-        width: 100%;
-        height: 50%;
-        padding: var(--space-6) var(--space-8);
-    }
-
-    .video {
-        width: 100%;
-        height: 50%;
-    }
-}
