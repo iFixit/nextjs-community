@@ -1,5 +1,4 @@
 import { Box, Flex, Heading, SimpleGrid, Text } from '@chakra-ui/react'
-import styles from '../../styles/community/activity.module.css'
 import Image from 'next/image'
 import React from 'react'
 import { Link } from "@chakra-ui/react"
@@ -64,24 +63,57 @@ const sampleData: Activity[] = [
   },
 ]
 
-function ActivityCard({ data }: {data: Activity}) {
+function ActivityCard({ data }: { data: Activity }) {
   return (
-    <Flex className={styles.card} direction='column'>
-      <Box className={`${styles.cardImage} ${styles.activityImage}`}>
+    <Flex
+      borderRadius='var(--border-radius-lg)'
+      overflow='hidden'
+      boxShadow='var(--shadow-3)'
+      position='relative'
+      direction='column'
+      _hover={{
+        cursor: 'pointer'
+      }}>
+      <Box
+        position='relative'
+        height='200px'
+        transition='0.5s'
+        _hover={{
+          opacity: '50%'
+        }}>
         <Image src={data.activity_img} alt='' layout='fill' objectFit='cover'/>
       </Box>
-      <Flex className={styles.details}>
-        <Box className={styles.cardImage}>
-          <Image 
-            className={styles.avatar}
+      <Flex 
+        padding='12px'
+        height='64px'
+        sx={{
+          '&:hover a': {
+            textDecoration: 'underline',
+          }
+        }}>
+        <Box
+          transition='0.5s'
+          borderRadius='50%'
+          overflow='hidden'
+          _hover={{
+            opacity: '50%'
+          }}>
+          <Image
             src={data.user_img} 
             alt=''
-            width={40} 
-            height={40} />
+            width={40}
+            height={40}
+            />
         </Box>
-        <Flex direction='column' className={styles.text}>
-          <Link href={data.user_url} fontSize={14} fontWeight='bold'>{data.author}</Link>
-          <Text color='var(--color-gray-5)' fontSize={14}>{data.title}</Text>
+        <Flex direction='column' marginLeft='16px'>
+          <Link 
+            href={data.user_url}
+            fontSize={14}
+            fontWeight='bold'>{data.author}</Link>
+          <Text 
+            color='var(--color-gray-5)' 
+            fontSize={14}
+            margin='0'>{data.title}</Text>
         </Flex>
       </Flex>
     </Flex>

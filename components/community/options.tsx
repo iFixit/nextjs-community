@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import styles from '../../styles/community/options.module.css'
 import { Button, Flex, Stack } from "@chakra-ui/react"
 import { Box, Heading, Text } from '@chakra-ui/layout'
 import { getImage } from '../../lib/images'
@@ -58,28 +57,53 @@ const optionTranslate: Option = {
 function OptionCard({ option }: { option: Option }) {
   return (
     <Flex 
-      className={styles.optionCard}
+      align='center'
+      overflow='hidden'
+      minHeight='100%'
+      borderRadius='var(--border-radius-lg)'
       direction={{ base:'row', md:'column' }}
       boxShadow={{ base:'var(--shadow-2)', md:'var(--shadow-3)' }}
       padding={{ base:'var(--space-4)', md:'0 0 var(--space-6)' }}
       width={{ base:'100%', md:'350px' }}>
-      <Box 
-        className={styles.cardImage}
-        display={{ base:'none', md:'flex' }}>
+      <Flex 
+        position='relative'
+        overflow='hidden'
+        minHeight='160px'
+        width='100%'
+        direction='column'
+        justify='center'
+        align='center'
+        objectFit='cover'
+        display={{ base:'none', md:'unset' }}>
         <Image src={option.image} alt='' layout='fill' objectFit='cover'/>
-      </Box>
+      </Flex>
       <Box 
-        className={styles.cardIcon}
+        position='relative'
+        overflow='hidden'
+        width='80px'
+        height='80px'
+        flex='0 0 auto'
+        borderRadius='50px'
+        backgroundColor='var(--color-blue)'
+        boxShadow='var(--shadow-2)'
+        objectFit='scale-down'
         margin={{ base:'0', md:'calc(-1 * var(--space-7)) auto var(--space-5)' }}>
         <Image src={option.icon} alt='' layout='fill'/>
       </Box>
       <Flex 
-        className={styles.cardText}>
+        direction='column'
+        align='center'
+        padding='0 var(--space-5)'
+        flexGrow={1}>
         <Heading as='h3' marginTop='0' fontSize='18px'>{option.title}</Heading>
         <Text 
-          className={styles.description}
+          textAlign='center'
+          fontSize='14px'
+          flexGrow={1}
+          padding='var(--space-2) 0'
+          color='var(--color-gray-6)'
           margin={{ base: 0, md: '0 0 var(--space-5)' }}>{option.description}</Text>
-        <Link className={styles.buttonLink}
+        <Link
           _hover={{ textDecoration: 'none'}}
           display={{ base:'none', md:'unset' }}
           href={option.link}>
@@ -97,7 +121,6 @@ function OptionCard({ option }: { option: Option }) {
 export default function OptionsDisplay() {
     return (
       <Stack 
-        className={styles.optionsContainer} 
         direction={{ base:'column', md:'row' }}
         marginTop={{ base:'var(--space-2)', md:'var(--space-7)' }}
         justify='space-between' 
