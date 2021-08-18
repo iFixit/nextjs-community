@@ -1,0 +1,62 @@
+import { color } from '@core-ds/primitives';
+
+const colors = {
+   white: `${color.white}`,
+   black: `${color.black}`,
+   blue: {
+      100: `${color.blueLight4}`,
+      200: `${color.blueLight3}`,
+      300: `${color.blueLight2}`,
+      400: `${color.blueLight1}`,
+      500: `${color.blue}`,
+      600: `${color.blueDark1}`,
+      700: `${color.blueDark2}`,
+      800: `${color.blueDark3}`,
+      900: `${color.blueDark4}`,
+   },
+   green: {
+      100: `${color.greenLight4}`,
+      200: `${color.greenLight3}`,
+      300: `${color.greenLight2}`,
+      400: `${color.greenLight1}`,
+      500: `${color.green}`,
+      600: `${color.greenDark1}`,
+      700: `${color.greenDark2}`,
+      800: `${color.greenDark3}`,
+      900: `${color.greenDark4}`,
+   },
+   yellow: {
+      100: `${color.yellowLight4}`,
+      200: `${color.yellowLight3}`,
+      300: `${color.yellowLight2}`,
+      400: `${color.yellowLight1}`,
+      500: `${color.yellow}`,
+      600: `${color.yellowDark1}`,
+      700: `${color.yellowDark2}`,
+      800: `${color.yellowDark3}`,
+      900: `${color.yellowDark4}`,
+   },
+   red: {
+      100: `${color.redLight4}`,
+      200: `${color.redLight3}`,
+      300: `${color.redLight2}`,
+      400: `${color.redLight1}`,
+      500: `${color.red}`,
+      600: `${color.redDark1}`,
+      700: `${color.redDark2}`,
+      800: `${color.redDark3}`,
+      900: `${color.redDark4}`,
+   },
+   gray: {
+      100: `${color.gray1}`,
+      200: `${color.gray2}`,
+      300: `${color.gray3}`,
+      400: `${color.gray4}`,
+      500: `${color.gray5}`,
+      600: `${color.gray6}`,
+      700: `${color.gray7}`,
+      800: `${color.gray8}`,
+   },
+};
+
+export default colors;
