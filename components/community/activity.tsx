@@ -4,33 +4,84 @@ import Image from 'next/image'
 import React from 'react'
 import { Link } from "@chakra-ui/react"
 
-const sampleData = {
-  title: 'Published a Guide',
-  author: 'Kristen Gismondi',
-  user_url: 'https://www.ifixit.com/User/1020837/Kristen+Gismondi',
-  user_img: 'https://guide-images.cdn.ifixit.com/igi/pfySb4UP4HQwgp6h.thumbnail',
-  activity_url: 'https://www.ifixit.com/Guide/Lenovo+ThinkPad+T460+Hinges+Replacement/143411',
-  activity_img: 'https://guide-images.cdn.ifixit.com/igi/W5jIROoJqS1viwJ6.standard',
+interface Activity {
+  title: string;
+  author: string;
+  user_url: string;
+  user_img: string;
+  activity_url: string;
+  activity_img: string;
 }
 
-function ActivityCard() {
+const sampleData: Activity[] = [
+  {
+    title: 'Published a Guide',
+    author: 'Kristen Gismondi',
+    user_url: 'https://www.ifixit.com/User/1020837/Kristen+Gismondi',
+    user_img: 'https://guide-images.cdn.ifixit.com/igi/pfySb4UP4HQwgp6h.thumbnail',
+    activity_url: 'https://www.ifixit.com/Guide/Lenovo+ThinkPad+T460+Hinges+Replacement/143411',
+    activity_img: 'https://guide-images.cdn.ifixit.com/igi/W5jIROoJqS1viwJ6.standard',
+  },
+  {
+    title: 'Published a Guide',
+    author: 'Kristen Gismondi',
+    user_url: 'https://www.ifixit.com/User/1020837/Kristen+Gismondi',
+    user_img: 'https://guide-images.cdn.ifixit.com/igi/pfySb4UP4HQwgp6h.thumbnail',
+    activity_url: 'https://www.ifixit.com/Guide/Lenovo+ThinkPad+T460+Hinges+Replacement/143411',
+    activity_img: 'https://guide-images.cdn.ifixit.com/igi/W5jIROoJqS1viwJ6.standard',
+  },
+  {
+    title: 'Published a Guide',
+    author: 'Kristen Gismondi',
+    user_url: 'https://www.ifixit.com/User/1020837/Kristen+Gismondi',
+    user_img: 'https://guide-images.cdn.ifixit.com/igi/pfySb4UP4HQwgp6h.thumbnail',
+    activity_url: 'https://www.ifixit.com/Guide/Lenovo+ThinkPad+T460+Hinges+Replacement/143411',
+    activity_img: 'https://guide-images.cdn.ifixit.com/igi/W5jIROoJqS1viwJ6.standard',
+  },
+  {
+    title: 'Published a Guide',
+    author: 'Kristen Gismondi',
+    user_url: 'https://www.ifixit.com/User/1020837/Kristen+Gismondi',
+    user_img: 'https://guide-images.cdn.ifixit.com/igi/pfySb4UP4HQwgp6h.thumbnail',
+    activity_url: 'https://www.ifixit.com/Guide/Lenovo+ThinkPad+T460+Hinges+Replacement/143411',
+    activity_img: 'https://guide-images.cdn.ifixit.com/igi/W5jIROoJqS1viwJ6.standard',
+  },
+  {
+    title: 'Published a Guide',
+    author: 'Kristen Gismondi',
+    user_url: 'https://www.ifixit.com/User/1020837/Kristen+Gismondi',
+    user_img: 'https://guide-images.cdn.ifixit.com/igi/pfySb4UP4HQwgp6h.thumbnail',
+    activity_url: 'https://www.ifixit.com/Guide/Lenovo+ThinkPad+T460+Hinges+Replacement/143411',
+    activity_img: 'https://guide-images.cdn.ifixit.com/igi/W5jIROoJqS1viwJ6.standard',
+  },
+  {
+    title: 'Published a Guide',
+    author: 'Kristen Gismondi',
+    user_url: 'https://www.ifixit.com/User/1020837/Kristen+Gismondi',
+    user_img: 'https://guide-images.cdn.ifixit.com/igi/pfySb4UP4HQwgp6h.thumbnail',
+    activity_url: 'https://www.ifixit.com/Guide/Lenovo+ThinkPad+T460+Hinges+Replacement/143411',
+    activity_img: 'https://guide-images.cdn.ifixit.com/igi/W5jIROoJqS1viwJ6.standard',
+  },
+]
+
+function ActivityCard({ data }: {data: Activity}) {
   return (
     <Flex className={styles.card} direction='column'>
       <Box className={`${styles.cardImage} ${styles.activityImage}`}>
-        <Image src={sampleData.activity_img} alt='' layout='fill' objectFit='cover'/>
+        <Image src={data.activity_img} alt='' layout='fill' objectFit='cover'/>
       </Box>
       <Flex className={styles.details}>
         <Box className={styles.cardImage}>
           <Image 
             className={styles.avatar}
-            src={sampleData.user_img} 
+            src={data.user_img} 
             alt=''
             width={40} 
             height={40} />
         </Box>
         <Flex direction='column' className={styles.text}>
-          <Link href={sampleData.user_url} fontSize={14} fontWeight='bold'>{sampleData.author}</Link>
-          <Text color='var(--color-gray-5)' fontSize={14}>{sampleData.title}</Text>
+          <Link href={data.user_url} fontSize={14} fontWeight='bold'>{data.author}</Link>
+          <Text color='var(--color-gray-5)' fontSize={14}>{data.title}</Text>
         </Flex>
       </Flex>
     </Flex>
@@ -49,12 +100,7 @@ export default function ActivityDisplay() {
           <SimpleGrid
             columns={{ base: 1, sm: 2, md: 3 }}
             spacing={5}>
-            <ActivityCard />
-            <ActivityCard />
-            <ActivityCard />
-            <ActivityCard />
-            <ActivityCard />
-            <ActivityCard />
+            {sampleData.map((activity) => <ActivityCard data={activity}/>)}
           </SimpleGrid>
         </React.Fragment>
     )
