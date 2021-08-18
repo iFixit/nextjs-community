@@ -75,13 +75,13 @@ function OptionCard({ option }: { option: Option }) {
       </Box>
       <Flex 
         className={styles.cardText}>
-        <Heading className={styles.title} as='h3' fontSize='18px'>{option.title}</Heading>
+        <Heading as='h3' marginTop='0' fontSize='18px'>{option.title}</Heading>
         <Text 
           className={styles.description}
           margin={{ base: 0, md: '0 0 var(--space-5)' }}>{option.description}</Text>
         <Link className={styles.buttonLink}
           _hover={{ textDecoration: 'none'}}
-          display={{ base:'none', md:'inline-flex' }}
+          display={{ base:'none', md:'unset' }}
           href={option.link}>
           <Button 
             padding='9px 16px 10px'

@@ -42,10 +42,6 @@
     flex-grow: 1;
 }
 
-.title {
-    color: var(--color-gray-8);
-}
-
 .description {
     color: var(--color-gray-6);
     padding: var(--space-2) 0;
