@@ -3,7 +3,10 @@
     overflow: hidden;
     box-shadow: var(--shadow-3);
     position: relative;
+}
 
+.card:hover {
+    cursor: pointer;
 }
 
 .cardImage {
