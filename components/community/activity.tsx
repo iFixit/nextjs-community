@@ -99,7 +99,7 @@ export default function ActivityDisplay() {
           </Heading>
           <SimpleGrid
             columns={{ base: 1, sm: 2, md: 3 }}
-            spacing={5}>
+            spacing={7}>
             {sampleData.map((activity, i) => <ActivityCard key={i} data={activity}/>)}
           </SimpleGrid>
         </React.Fragment>
