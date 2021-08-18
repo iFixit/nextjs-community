@@ -6,6 +6,7 @@ import styles from '../../styles/community/navigation.module.css'
 const isOnIfixit = true;
 const isMod = true;
 const patrolEnabled = true;
+
 interface TabData {
   url: string;
   label: string;
@@ -95,8 +96,9 @@ function getActiveTabIndex(pageTitle: string) {
 export default function NavigationDisplay({ title }: { title: string }) {
     return (
         <React.Fragment>
-          <Flex 
-            className={styles.header}
+          <Flex
+            margin='var(--space-8) 0 var(--space-5)'
+            align='center'
             direction={{ base:'column', md:'row' }}
             justify={{ base:'center', md:'space-between' }}>
             <Heading as='h1'>Community</Heading>

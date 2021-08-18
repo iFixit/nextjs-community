@@ -1,11 +1,17 @@
+import { chakra } from '@chakra-ui/react'
 import Image from 'next/image'
-import styles from '../../styles/ifixit/header.module.css'
 
 export default function Header() {
+    const Header = chakra('header');
+
     return (
-        <header className={styles.container}>
-            <Image src='/images/header.png' alt='' layout='fill' objectFit='contain' />
-        </header>
+        <Header
+            position='relative'
+            display='flex'
+            alignItems='center'
+            height='68px'>
+            <Image src='/images/header.png' alt='' layout='fill' objectFit='cover' />
+        </Header>
     )
 }
   
