@@ -6,7 +6,6 @@ const Tab = {
       line: {
          tab: {
             borderColor: `${color.gray2}`,
-            borderRadius: '0',
             color: `${color.gray5}`,
             fontWeight: `${fontWeight.bold}`,
          },

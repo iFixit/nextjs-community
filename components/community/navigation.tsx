@@ -66,8 +66,20 @@ function ChakraTabs(title: string) {
      const label = tab.label;
      return (
         <Tab
+          className={label === title ? 'active' : ''}
           key={index}
+          minWidth='100px'
           onClick={() => router.push(url)}
+          sx={{
+            '&.active': {
+              color: 'var(--color-blue)',
+              borderColor: 'var(--color-blue)',
+            },
+            '&:hover:not(.active)': {
+              color: 'var(--color-gray-6)',
+              borderColor: 'var(--color-gray-4)',
+            },
+          }}
         >
           {label}
         </Tab>
@@ -110,9 +122,22 @@ export default function NavigationDisplay({ title }: { title: string }) {
               <Button borderColor='var(--color-gray-3)'>Join the Community</Button>
             </ButtonGroup>
           </Flex>
-          <Box className={styles.wrapper}>
+          <Box
+            position='relative'
+            sx={{
+              '@media screen and (max-width: 886px)': {
+                '&::after': {
+                  content: "''",
+                  position: 'absolute',
+                  right: '-1px',
+                  top: '0',
+                  height: '100%',
+                  width: '5%',
+                  background: 'linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, var(--color-white) 100%)',
+                },
+              },
+            }}>
             <Tabs
-               isLazy
                isFitted
                variant="line"
                overflowX="auto"
