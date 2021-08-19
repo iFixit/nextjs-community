@@ -1,4 +1,4 @@
-import { color, fontSize } from '@core-ds/primitives';
+import cp from '@core-ds/primitives';
 
 const Button = {
    baseStyle: {
@@ -14,18 +14,18 @@ const Button = {
    },
    variants: {
       outline: {
-         fontSize: `${fontSize[1]}`,
-         borderColor: `${color.gray3}`,
-         color: `${color.black}`,
+         fontSize: cp.fontSize[1],
+         borderColor: cp.color.gray3,
+         color: cp.color.black,
       },
       invertOnHover: {
-         fontSize: `${fontSize[1]}`,
-         border: `1px solid ${color.gray5}`,
-         backgroundColor: `${color.black}`,
-         color: `${color.white}`,
+         fontSize: cp.fontSize[1],
+         border: `1px solid ${cp.color.gray5}`,
+         backgroundColor: cp.color.black,
+         color: cp.color.white,
          _hover: {
-            color: `${color.black}`,
-            backgroundColor: `${color.white}`,
+            color: cp.color.black,
+            backgroundColor: cp.color.white,
          },
       },
    },
