@@ -1,5 +1,5 @@
 module.exports = {
-    images: {
+   images: {
       domains: ['www.ifixit.com', 'guide-images.cdn.ifixit.com'],
-    },
-}
+   },
+};

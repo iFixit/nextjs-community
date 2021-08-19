@@ -1,3 +1,68 @@
 {
-  "extends": "next/core-web-vitals"
+   "extends": [
+      "prettier",
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "next/core-web-vitals"
+   ],
+   "env": {
+      "browser": true,
+      "commonjs": true,
+      "es6": true,
+      "jquery": true,
+      "jest": true
+   },
+   "parserOptions": {
+      "ecmaVersion": 6,
+      "ecmaFeatures": {
+         "experimentalObjectRestSpread": true,
+         "jsx": true
+      },
+      "sourceType": "module"
+   },
+   "plugins": ["react", "prettier"],
+   "rules": {
+      "no-undef": "warn",
+      "no-unused-vars": "warn",
+      "no-useless-escape": "warn",
+      "no-console": "warn",
+      "no-redeclare": "warn",
+      "no-empty": "warn",
+      "no-inner-declarations": "warn",
+      "no-regex-spaces": "warn",
+      "no-unreachable": "warn",
+      "valid-typeof": "warn",
+      "no-extra-semi": "warn",
+      "no-extra-boolean-cast": "warn",
+      "no-unexpected-multiline": "warn",
+      "no-self-assign": "warn",
+      "no-fallthrough": "warn",
+      "no-mixed-spaces-and-tabs": "warn",
+      "no-unsafe-negation": "warn",
+      "no-dupe-else-if": "warn",
+      "no-prototype-builtins": "warn",
+      "prettier/prettier": [
+         "warn",
+         {
+            "arrowParens": "avoid",
+            "tabWidth": 3,
+            "trailingComma": "es5",
+            "singleQuote": true,
+            "printWidth": 100,
+            "endOfLine": "auto" // for Windows Users
+         }
+      ],
+      "react/display-name": "warn",
+      "react/jsx-key": "warn",
+      "react/no-find-dom-node": "warn",
+      "react/no-render-return-value": "warn",
+      "react/no-unescaped-entities": "warn",
+      "react/no-unknown-property": "warn",
+      "react/prop-types": "off"
+   },
+   "settings": {
+      "react": {
+         "version": "detect"
+      }
+   }
 }

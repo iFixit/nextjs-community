@@ -21,10 +21,10 @@ const Button = {
          border: `1px solid ${color.gray3}`,
          backgroundColor: `${color.black}`,
          color: `${color.white}`,
-         _hover:{
+         _hover: {
             color: `${color.black}`,
             backgroundColor: `${color.white}`,
-         }
+         },
       },
    },
 };

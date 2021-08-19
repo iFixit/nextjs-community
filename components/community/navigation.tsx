@@ -1,141 +1,156 @@
-import { Box, Button, ButtonGroup, Flex, Heading, Tab, TabList, TabPanel, TabPanels, Tabs } from '@chakra-ui/react'
+import {
+   Box,
+   Button,
+   ButtonGroup,
+   Flex,
+   Heading,
+   Tab,
+   TabList,
+   TabPanel,
+   TabPanels,
+   Tabs,
+} from '@chakra-ui/react';
 import { useRouter } from 'next/dist/client/router';
-import React from 'react'
+import React from 'react';
 
 const isOnIfixit = true;
 const isMod = true;
 const patrolEnabled = true;
 
 interface TabData {
-  url: string;
-  label: string;
-  showTab: boolean;
+   url: string;
+   label: string;
+   showTab: boolean;
 }
 
-let tabData: Array<TabData> = [
-  {
-    'url': 'https://www.ifixit.com/Community',
-    'label': 'Community',
-    'showTab': isOnIfixit,
-  },
-  {
-    'url': 'https://www.ifixit.com/Leaderboard',
-    'label': 'Leaderboard',
-    'showTab': true,
-  },
-  {
-    'url': 'https://www.ifixit.com/Teams/all',
-    'label': 'Teams',
-    'showTab': true,
-  },
-  {
-    'url': 'https://www.ifixit.com/Business',
-    'label': 'Businesses',
-    'showTab': isOnIfixit,
-  },
-  {
-    'url': 'https://www.ifixit.com/Contribute',
-    'label': 'Contribute',
-    'showTab': true,
-  },
-  {
-    'url': 'https://www.ifixit.com/Translate',
-    'label': 'Translate',
-    'showTab': true,
-  },
-  {
-    'url': 'https://www.ifixit.com/Patrol',
-    'label': 'Patrol',
-    'showTab': isMod && patrolEnabled,
-  },
-  {
-    'url': 'https://www.ifixit.com/Moderation',
-    'label': 'Moderation',
-    'showTab': isMod,
-  },
-]
+const tabData: Array<TabData> = [
+   {
+      url: 'https://www.ifixit.com/Community',
+      label: 'Community',
+      showTab: isOnIfixit,
+   },
+   {
+      url: 'https://www.ifixit.com/Leaderboard',
+      label: 'Leaderboard',
+      showTab: true,
+   },
+   {
+      url: 'https://www.ifixit.com/Teams/all',
+      label: 'Teams',
+      showTab: true,
+   },
+   {
+      url: 'https://www.ifixit.com/Business',
+      label: 'Businesses',
+      showTab: isOnIfixit,
+   },
+   {
+      url: 'https://www.ifixit.com/Contribute',
+      label: 'Contribute',
+      showTab: true,
+   },
+   {
+      url: 'https://www.ifixit.com/Translate',
+      label: 'Translate',
+      showTab: true,
+   },
+   {
+      url: 'https://www.ifixit.com/Patrol',
+      label: 'Patrol',
+      showTab: isMod && patrolEnabled,
+   },
+   {
+      url: 'https://www.ifixit.com/Moderation',
+      label: 'Moderation',
+      showTab: isMod,
+   },
+];
 
 const tabs = tabData.filter((tab: TabData) => tab.showTab);
 
 function ChakraTabs(title: string) {
-  const router = useRouter();
+   const router = useRouter();
 
-  return tabs.map((tab: TabData, index: number) => {
-     const url = tab.url;
-     const label = tab.label;
-     return (
-        <Tab
-          className={label === title ? 'active' : ''}
-          key={index}
-          minWidth='100px'
-          onClick={() => router.push(url)}
-          sx={{
-            '&.active': {
-              color: 'var(--color-blue)',
-              borderColor: 'var(--color-blue)',
-            },
-            '&:hover:not(.active)': {
-              color: 'var(--color-gray-6)',
-              borderColor: 'var(--color-gray-4)',
-            },
-          }}
-        >
-          {label}
-        </Tab>
-     );
-  });
+   return tabs.map((tab: TabData, index: number) => {
+      const url = tab.url;
+      const label = tab.label;
+      return (
+         <Tab
+            className={label === title ? 'active' : ''}
+            key={index}
+            minWidth="100px"
+            onClick={() => router.push(url)}
+            sx={{
+               '&.active': {
+                  color: 'var(--color-blue)',
+                  borderColor: 'var(--color-blue)',
+               },
+               '&:hover:not(.active)': {
+                  color: 'var(--color-gray-6)',
+                  borderColor: 'var(--color-gray-4)',
+               },
+            }}
+         >
+            {label}
+         </Tab>
+      );
+   });
 }
 
 function listTabPanelComponents() {
-  return tabs.map((tabInfo) => {
-     return <TabPanel key={tabInfo.label}></TabPanel>;
-  });
+   return tabs.map(tabInfo => {
+      return <TabPanel key={tabInfo.label}></TabPanel>;
+   });
 }
 
 function getActiveTabIndex(pageTitle: string) {
-  let index = 0;
-  while (index < tabs.length) {
-     const tab = tabs[index];
-     if (tab.label === pageTitle) {
-        break;
-     }
-     index++;
-  }
-  return index;
+   let index = 0;
+   while (index < tabs.length) {
+      const tab = tabs[index];
+      if (tab.label === pageTitle) {
+         break;
+      }
+      index++;
+   }
+   return index;
 }
 
 export default function NavigationDisplay({ title }: { title: string }) {
-    return (
-        <React.Fragment>
-          <Flex
-            margin='var(--space-8) 0 var(--space-5)'
-            align='center'
-            direction={{ base:'column', md:'row' }}
-            justify={{ base:'center', md:'space-between' }}>
-            <Heading as='h1'>Community</Heading>
-            <ButtonGroup 
-              variant='outline' 
-              spacing='var(--space-4)'
-              marginTop={{ base:'var(--space-4)', md: 0 }}>
-              <Button>How this Works</Button>
-              <Button>Join the Community</Button>
+   return (
+      <React.Fragment>
+         <Flex
+            margin="var(--space-8) 0 var(--space-5)"
+            align="center"
+            direction={{ base: 'column', md: 'row' }}
+            justify={{ base: 'center', md: 'space-between' }}
+         >
+            <Heading as="h1">Community</Heading>
+            <ButtonGroup
+               variant="outline"
+               spacing="var(--space-4)"
+               marginTop={{ base: 'var(--space-4)', md: 0 }}
+            >
+               <Button>How this Works</Button>
+               <Button>Join the Community</Button>
             </ButtonGroup>
-          </Flex>
-          <Box
-            position='relative'
+         </Flex>
+         <Box
+            position="relative"
             sx={{
-              '@media screen and (max-width: 886px)': {
-                '&::after': {
-                  content: "''",
-                  position: 'absolute',
-                  right: '-1px',
-                  top: '0',
-                  height: '100%',
-                  width: '5%',
-                  background: 'linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, var(--color-white) 100%)',
-                },
-              },
-            }}>
+               '@media screen and (max-width: 886px)': {
+                  '&::after': {
+                     content: "''",
+                     position: 'absolute',
+                     right: '-1px',
+                     top: '0',
+                     height: '100%',
+                     width: '5%',
+                     background:
+                        'linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, var(--color-white) 100%)',
+                  },
+               },
+            }}
+         >
             <Tabs
                variant="line"
                overflowX="auto"
@@ -147,6 +162,6 @@ export default function NavigationDisplay({ title }: { title: string }) {
                <TabPanels display="none">{listTabPanelComponents()}</TabPanels>
             </Tabs>
          </Box>
-        </React.Fragment>
-    )
+      </React.Fragment>
+   );
 }
