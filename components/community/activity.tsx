@@ -15,7 +15,7 @@ interface Activity {
 const sampleData: Activity[] = [
   {
     title: 'Published a Guide',
-    author: 'Kristen Gismondi',
+    author: 'Kristen Gismondgfdsagsdfsgdsgrefresjhrsiherslwlrei',
     user_url: 'https://www.ifixit.com/User/1020837/Kristen+Gismondi',
     user_img: 'https://guide-images.cdn.ifixit.com/igi/pfySb4UP4HQwgp6h.thumbnail',
     activity_url: 'https://www.ifixit.com/Guide/Lenovo+ThinkPad+T460+Hinges+Replacement/143411',
@@ -95,6 +95,7 @@ function ActivityCard({ data }: { data: Activity }) {
           transition='0.5s'
           borderRadius='50%'
           overflow='hidden'
+          minWidth='40px'
           _hover={{
             opacity: '50%'
           }}>
@@ -105,12 +106,24 @@ function ActivityCard({ data }: { data: Activity }) {
             height={40}
             />
         </Box>
-        <Flex direction='column' marginLeft='16px'>
-          <Link 
+        <Flex 
+          direction='column' 
+          marginLeft='16px'
+          overflow='hidden'>
+          <Link
+            overflow='hidden'
+            textOverflow='ellipsis'
+            whiteSpace='nowrap'
+            wordBreak='break-all'
             href={data.user_url}
+            margin='0'
             fontSize={14}
             fontWeight='bold'>{data.author}</Link>
           <Text 
+            overflow='hidden'
+            textOverflow='ellipsis'
+            whiteSpace='nowrap'
+            wordBreak='break-all'
             color='var(--color-gray-5)' 
             fontSize={14}
             margin='0'>{data.title}</Text>
