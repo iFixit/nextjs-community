@@ -108,9 +108,9 @@ function OptionCard({ option }: { option: Option }) {
           display={{ base:'none', md:'unset' }}
           href={option.link}>
           <Button 
+            variant='outline'
             padding='9px 16px 10px'
             fontSize='14px'
-            border='1px solid var(--color-gray-3)'
             backgroundColor='transparent'>{option.button}</Button>
         </Link>
       </Flex>

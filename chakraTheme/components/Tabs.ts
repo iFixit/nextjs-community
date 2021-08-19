@@ -1,6 +1,9 @@
 import { color, fontWeight } from '@core-ds/primitives';
 
 const Tab = {
+   defaultProps: {
+      isFitted: true,
+   },
    parts: ['tab'],
    variants: {
       line: {

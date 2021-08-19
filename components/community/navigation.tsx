@@ -1,7 +1,6 @@
 import { Box, Button, ButtonGroup, Flex, Heading, Tab, TabList, TabPanel, TabPanels, Tabs } from '@chakra-ui/react'
 import { useRouter } from 'next/dist/client/router';
 import React from 'react'
-import styles from '../../styles/community/navigation.module.css'
 
 const isOnIfixit = true;
 const isMod = true;
@@ -118,8 +117,8 @@ export default function NavigationDisplay({ title }: { title: string }) {
               variant='outline' 
               spacing='var(--space-4)'
               marginTop={{ base:'var(--space-4)', md: 0 }}>
-              <Button borderColor='var(--color-gray-3)'>How this Works</Button>
-              <Button borderColor='var(--color-gray-3)'>Join the Community</Button>
+              <Button>How this Works</Button>
+              <Button>Join the Community</Button>
             </ButtonGroup>
           </Flex>
           <Box
@@ -138,7 +137,6 @@ export default function NavigationDisplay({ title }: { title: string }) {
               },
             }}>
             <Tabs
-               isFitted
                variant="line"
                overflowX="auto"
                padding="3px"
