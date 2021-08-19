@@ -3,7 +3,6 @@ import { color, fontFamily, fontSize, fontWeight, lineHeight, space } from '@cor
 
 const styles = {
    global: {
-      body: `${fontFamily.lato}`,
       'h1, h2, h3': {
          lineHeight: `${lineHeight.tight}`,
       },

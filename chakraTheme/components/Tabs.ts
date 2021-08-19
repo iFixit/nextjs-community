@@ -1,4 +1,4 @@
-import { color, fontWeight } from '@core-ds/primitives';
+import { color, fontSize, fontWeight } from '@core-ds/primitives';
 
 const Tab = {
    defaultProps: {
@@ -10,6 +10,7 @@ const Tab = {
          tab: {
             borderColor: `${color.gray2}`,
             color: `${color.gray5}`,
+            fontSize: `${fontSize[1]}`,
             fontWeight: `${fontWeight.bold}`,
          },
       },

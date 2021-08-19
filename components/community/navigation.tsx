@@ -124,7 +124,9 @@ export default function NavigationDisplay({ title }: { title: string }) {
             direction={{ base: 'column', md: 'row' }}
             justify={{ base: 'center', md: 'space-between' }}
          >
-            <Heading as="h1">Community</Heading>
+            <Heading as="h1" margin="0">
+               Community
+            </Heading>
             <ButtonGroup
                variant="outline"
                spacing="var(--space-4)"

@@ -1,8 +1,8 @@
-import { color } from '@core-ds/primitives';
+import { color, fontSize } from '@core-ds/primitives';
 
 const Button = {
    baseStyle: {
-      fontWeight: 'inherit',
+      fontWeight: 'bold',
    },
    sizes: {
       sm: {
@@ -14,8 +14,10 @@ const Button = {
    },
    variants: {
       outline: {
+         fontSize: `${fontSize[1]}`,
          borderColor: `${color.gray3}`,
          color: `${color.black}`,
+
       },
       invertOnHover: {
          border: `1px solid ${color.gray3}`,
