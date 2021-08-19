@@ -17,10 +17,10 @@ const Button = {
          fontSize: `${fontSize[1]}`,
          borderColor: `${color.gray3}`,
          color: `${color.black}`,
-
       },
       invertOnHover: {
-         border: `1px solid ${color.gray3}`,
+         fontSize: `${fontSize[1]}`,
+         border: `1px solid ${color.gray5}`,
          backgroundColor: `${color.black}`,
          color: `${color.white}`,
          _hover: {

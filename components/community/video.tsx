@@ -9,7 +9,6 @@ export default function VideoDisplay() {
          borderRadius="var(--border-radius-lg)"
          bgColor="var(--color-black)"
          direction={{ base: 'column', md: 'row' }}
-         height={{ base: '600px', md: 'unset' }}
          marginTop={{ base: 'var(--space-7)', md: 'var(--space-10)' }}
       >
          <Flex
@@ -40,7 +39,7 @@ export default function VideoDisplay() {
                <Button variant="invertOnHover">{'Start a New Page'}</Button>
             </Link>
          </Flex>
-         <AspectRatio width={{ base: '100%', md: '50%' }} height={{ base: '50%', md: 'unset' }}>
+         <AspectRatio position="relative" width={{ base: '100%', md: '50%' }}>
             <iframe
                title="How to Write a Repair Guide on iFixit.com!"
                src={videoLink}
