@@ -7,12 +7,13 @@ import {
    ModalCloseButton,
    Stack,
    StackDivider,
+   ModalFooter,
 } from '@chakra-ui/react';
 import { useState } from 'react';
 import Networks from './networks';
 import { ResetHeader, ResetForm } from './reset';
 import { LoginHeader, LoginForm } from './login';
-import { RegisterHeader, RegisterForm } from './register'
+import { RegisterHeader, RegisterForm } from './register';
 
 function getProperHeader(
    resetMode: boolean,
@@ -29,7 +30,7 @@ function getProperHeader(
    return <LoginHeader toggleRegister={toggleRegister} />;
 }
 
-function getProperForm(resetMode: boolean, registerMode: boolean, toggleReset: () => void,) {
+function getProperForm(resetMode: boolean, registerMode: boolean, toggleReset: () => void) {
    if (resetMode) {
       return <ResetForm />;
    }
@@ -48,17 +49,24 @@ export default function LoginModal({ isOpen, onClose }: { isOpen: boolean; onClo
    return (
       <Modal isOpen={isOpen} onClose={onClose}>
          <ModalOverlay />
-         <ModalContent>
+         <ModalContent overflow="hidden" w={{ base: '90%', md: '700px' }}>
             <ModalHeader>
                {getProperHeader(resetMode, registerMode, toggleReset, toggleRegister)}
             </ModalHeader>
             <ModalCloseButton />
             <ModalBody bgColor="var(--color-gray-1)">
-               <Stack divider={<StackDivider borderColor="gray" />} direction="row">
+               <Stack
+                  divider={
+                     <StackDivider borderColor="gray" display={{ base: 'none', md: 'unset' }} />
+                  }
+                  direction={{ base: 'column', md: 'row' }}
+                  height={{ base: '620px', md: '360px' }}
+               >
                   {getProperForm(resetMode, registerMode, toggleReset)}
                   <Networks />
                </Stack>
             </ModalBody>
+            <ModalFooter padding="0" bgColor="var(--color-gray-1)" />
          </ModalContent>
       </Modal>
    );

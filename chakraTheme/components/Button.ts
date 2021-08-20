@@ -28,6 +28,10 @@ const Button = {
             backgroundColor: cp.color.white,
          },
       },
+      link: {
+         border: 'none',
+         fontWeight: 'normal',
+      },
    },
 };
 
