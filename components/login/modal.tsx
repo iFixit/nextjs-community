@@ -12,37 +12,51 @@ import {
 } from '@chakra-ui/react';
 import { useState } from 'react';
 import Networks from './networks';
+import { ResetHeader, ResetForm } from './reset';
+import { LoginHeader, LoginForm } from './login';
 
-function getProperForm(resetMode: boolean, registerMode: boolean) {
+function getProperHeader(
+   resetMode: boolean,
+   registerMode: boolean,
+   toggleReset: () => void,
+   toggleRegister: () => void
+) {
+   if (resetMode) {
+      return <ResetHeader toggle={toggleReset} />;
+   }
+   // if (registerMode) {
+   //    return <RegisterForm toggle={toggleRegister} />;
+   // }
+   return <LoginHeader toggleRegister={toggleRegister} />;
+}
+
+function getProperForm(resetMode: boolean, registerMode: boolean, toggleReset: () => void,) {
    if (resetMode) {
       return <ResetForm />;
    }
-   if (registerMode) {
-      return <RegisterForm />;
-   }
-   return <LoginForm />;
+   // if (registerMode) {
+   //    return <RegisterForm />;
+   // }
+   return <LoginForm toggleReset={toggleReset}/>;
 }
 
 export default function LoginModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
    const [resetMode, setResetMode] = useState(false);
    const [registerMode, setRegisterMode] = useState(false);
-   const toggleForgot = () => setResetMode(!resetMode);
-   const toggleRegister = () => setResetMode(!registerMode);
-   const panel = getProperForm(resetMode, registerMode);
+   const toggleReset = () => setResetMode(!resetMode);
+   const toggleRegister = () => setRegisterMode(!registerMode);
 
    return (
       <Modal isOpen={isOpen} onClose={onClose}>
          <ModalOverlay />
          <ModalContent>
-            <ModalHeader border="1px solid black">
-               <Box textAlign="center">
-                  <Heading>{resetMode ? 'Log In' : 'Reset Password'}</Heading>
-               </Box>
+            <ModalHeader>
+               {getProperHeader(resetMode, registerMode, toggleReset, toggleRegister)}
             </ModalHeader>
             <ModalCloseButton />
-            <ModalBody>
+            <ModalBody bgColor="var(--color-gray-1)">
                <Stack divider={<StackDivider borderColor="gray" />} direction="row">
-                  {getProperForm(resetMode, registerMode)}
+                  {getProperForm(resetMode, registerMode, toggleReset)}
                   <Networks />
                </Stack>
             </ModalBody>
