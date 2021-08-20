@@ -3,65 +3,15 @@ import Image from 'next/image';
 import React from 'react';
 import { Link } from '@chakra-ui/react';
 
-interface Activity {
-   title: string;
+export interface Activity {
+   text: string;
    author: string;
    user_url: string;
-   user_img: string;
-   activity_url: string;
-   activity_img: string;
+   user_image: string;
+   url: string;
+   image_url: string;
+   type: string;
 }
-
-const sampleData: Activity[] = [
-   {
-      title: 'Published a Guide',
-      author: 'Kristen Gismondgfdsagsdfsgdsgrefresjhrsiherslwlrei',
-      user_url: 'https://www.ifixit.com/User/1020837/Kristen+Gismondi',
-      user_img: 'https://guide-images.cdn.ifixit.com/igi/pfySb4UP4HQwgp6h.thumbnail',
-      activity_url: 'https://www.ifixit.com/Guide/Lenovo+ThinkPad+T460+Hinges+Replacement/143411',
-      activity_img: 'https://guide-images.cdn.ifixit.com/igi/W5jIROoJqS1viwJ6.standard',
-   },
-   {
-      title: 'Published a Guide',
-      author: 'Kristen Gismondi',
-      user_url: 'https://www.ifixit.com/User/1020837/Kristen+Gismondi',
-      user_img: 'https://guide-images.cdn.ifixit.com/igi/pfySb4UP4HQwgp6h.thumbnail',
-      activity_url: 'https://www.ifixit.com/Guide/Lenovo+ThinkPad+T460+Hinges+Replacement/143411',
-      activity_img: 'https://guide-images.cdn.ifixit.com/igi/W5jIROoJqS1viwJ6.standard',
-   },
-   {
-      title: 'Published a Guide',
-      author: 'Kristen Gismondi',
-      user_url: 'https://www.ifixit.com/User/1020837/Kristen+Gismondi',
-      user_img: 'https://guide-images.cdn.ifixit.com/igi/pfySb4UP4HQwgp6h.thumbnail',
-      activity_url: 'https://www.ifixit.com/Guide/Lenovo+ThinkPad+T460+Hinges+Replacement/143411',
-      activity_img: 'https://guide-images.cdn.ifixit.com/igi/W5jIROoJqS1viwJ6.standard',
-   },
-   {
-      title: 'Published a Guide',
-      author: 'Kristen Gismondi',
-      user_url: 'https://www.ifixit.com/User/1020837/Kristen+Gismondi',
-      user_img: 'https://guide-images.cdn.ifixit.com/igi/pfySb4UP4HQwgp6h.thumbnail',
-      activity_url: 'https://www.ifixit.com/Guide/Lenovo+ThinkPad+T460+Hinges+Replacement/143411',
-      activity_img: 'https://guide-images.cdn.ifixit.com/igi/W5jIROoJqS1viwJ6.standard',
-   },
-   {
-      title: 'Published a Guide',
-      author: 'Kristen Gismondi',
-      user_url: 'https://www.ifixit.com/User/1020837/Kristen+Gismondi',
-      user_img: 'https://guide-images.cdn.ifixit.com/igi/pfySb4UP4HQwgp6h.thumbnail',
-      activity_url: 'https://www.ifixit.com/Guide/Lenovo+ThinkPad+T460+Hinges+Replacement/143411',
-      activity_img: 'https://guide-images.cdn.ifixit.com/igi/W5jIROoJqS1viwJ6.standard',
-   },
-   {
-      title: 'Published a Guide',
-      author: 'Kristen Gismondi',
-      user_url: 'https://www.ifixit.com/User/1020837/Kristen+Gismondi',
-      user_img: 'https://guide-images.cdn.ifixit.com/igi/pfySb4UP4HQwgp6h.thumbnail',
-      activity_url: 'https://www.ifixit.com/Guide/Lenovo+ThinkPad+T460+Hinges+Replacement/143411',
-      activity_img: 'https://guide-images.cdn.ifixit.com/igi/W5jIROoJqS1viwJ6.standard',
-   },
-];
 
 function ActivityCard({ data }: { data: Activity }) {
    return (
@@ -75,7 +25,8 @@ function ActivityCard({ data }: { data: Activity }) {
             cursor: 'pointer',
          }}
       >
-         <Box
+         <Link
+            href={'https://www.ifixit.com' + data.url}
             position="relative"
             height="200px"
             transition="0.5s"
@@ -83,8 +34,8 @@ function ActivityCard({ data }: { data: Activity }) {
                opacity: '50%',
             }}
          >
-            <Image src={data.activity_img} alt="" layout="fill" objectFit="cover" />
-         </Box>
+            <Image src={data.image_url} alt="" layout="fill" objectFit="cover" />
+         </Link>
          <Flex
             padding="12px"
             height="64px"
@@ -103,7 +54,7 @@ function ActivityCard({ data }: { data: Activity }) {
                   opacity: '50%',
                }}
             >
-               <Image src={data.user_img} alt="" width={40} height={40} />
+               <Image src={data.user_image} alt="" width={40} height={40} />
             </Box>
             <Flex direction="column" marginLeft="16px" overflow="hidden">
                <Link
@@ -127,7 +78,7 @@ function ActivityCard({ data }: { data: Activity }) {
                   fontSize={14}
                   margin="0"
                >
-                  {data.title}
+                  {data.text}
                </Text>
             </Flex>
          </Flex>
@@ -135,7 +86,7 @@ function ActivityCard({ data }: { data: Activity }) {
    );
 }
 
-export default function ActivityDisplay() {
+export default function ActivityDisplay({ data }: { data: Activity[] }) {
    return (
       <React.Fragment>
          <Heading
@@ -149,7 +100,7 @@ export default function ActivityDisplay() {
             Latest Community Activity
          </Heading>
          <SimpleGrid columns={{ base: 1, sm: 2, md: 3 }} spacing={7}>
-            {sampleData.map((activity, i) => (
+            {data.map((activity, i) => (
                <ActivityCard key={i} data={activity} />
             ))}
          </SimpleGrid>
