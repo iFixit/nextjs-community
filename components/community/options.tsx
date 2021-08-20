@@ -1,8 +1,7 @@
 import Image from 'next/image';
-import { Button, Flex, Stack } from '@chakra-ui/react';
+import { Button, Flex, Stack, Link } from '@chakra-ui/react';
 import { Box, Heading, Text } from '@chakra-ui/layout';
 import { getImage } from '../../lib/images';
-import { Link } from '@chakra-ui/react';
 import { isEnglish } from '../../lib/lang';
 
 interface Option {

@@ -9,9 +9,11 @@ import {
    TabPanel,
    TabPanels,
    Tabs,
+   useDisclosure,
 } from '@chakra-ui/react';
 import { useRouter } from 'next/dist/client/router';
 import React from 'react';
+import LoginModal from '../login/modal';
 
 const isOnIfixit = true;
 const isMod = true;
@@ -116,6 +118,8 @@ function getActiveTabIndex(pageTitle: string) {
 }
 
 export default function NavigationDisplay({ title }: { title: string }) {
+   const { isOpen, onOpen, onClose } = useDisclosure();
+
    return (
       <React.Fragment>
          <Flex
@@ -133,7 +137,8 @@ export default function NavigationDisplay({ title }: { title: string }) {
                marginTop={{ base: 'var(--space-4)', md: 0 }}
             >
                <Button>How this Works</Button>
-               <Button>Join the Community</Button>
+               <Button onClick={onOpen}>Join the Community</Button>
+               <LoginModal isOpen={isOpen} onClose={onClose} />
             </ButtonGroup>
          </Flex>
          <Box
