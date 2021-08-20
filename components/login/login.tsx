@@ -11,7 +11,7 @@ export function LoginHeader({ toggleRegister }: { toggleRegister: () => void }) 
    );
 }
 
-export function LoginForm({toggleReset}: {toggleReset: ()=>void}) {
+export function LoginForm({ toggleReset }: { toggleReset: () => void }) {
    return (
       <Box>
          <Text>Email</Text>

@@ -1,12 +1,10 @@
 import {
-   Heading,
    Modal,
    ModalOverlay,
    ModalContent,
    ModalHeader,
    ModalBody,
    ModalCloseButton,
-   Box,
    Stack,
    StackDivider,
 } from '@chakra-ui/react';
@@ -14,6 +12,7 @@ import { useState } from 'react';
 import Networks from './networks';
 import { ResetHeader, ResetForm } from './reset';
 import { LoginHeader, LoginForm } from './login';
+import { RegisterHeader, RegisterForm } from './register'
 
 function getProperHeader(
    resetMode: boolean,
@@ -24,9 +23,9 @@ function getProperHeader(
    if (resetMode) {
       return <ResetHeader toggle={toggleReset} />;
    }
-   // if (registerMode) {
-   //    return <RegisterForm toggle={toggleRegister} />;
-   // }
+   if (registerMode) {
+      return <RegisterHeader toggle={toggleRegister} />;
+   }
    return <LoginHeader toggleRegister={toggleRegister} />;
 }
 
@@ -34,10 +33,10 @@ function getProperForm(resetMode: boolean, registerMode: boolean, toggleReset: (
    if (resetMode) {
       return <ResetForm />;
    }
-   // if (registerMode) {
-   //    return <RegisterForm />;
-   // }
-   return <LoginForm toggleReset={toggleReset}/>;
+   if (registerMode) {
+      return <RegisterForm />;
+   }
+   return <LoginForm toggleReset={toggleReset} />;
 }
 
 export default function LoginModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
