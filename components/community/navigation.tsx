@@ -119,6 +119,7 @@ function getActiveTabIndex(pageTitle: string) {
 
 export default function NavigationDisplay({ title }: { title: string }) {
    const { isOpen, onOpen, onClose } = useDisclosure();
+   const router = useRouter();
 
    return (
       <React.Fragment>
@@ -136,7 +137,9 @@ export default function NavigationDisplay({ title }: { title: string }) {
                spacing="var(--space-4)"
                marginTop={{ base: 'var(--space-4)', md: 0 }}
             >
-               <Button>How this Works</Button>
+               <Button onClick={() => router.push('https://www.ifixit.com/Info/Use_Guidelines')}>
+                  How this Works
+               </Button>
                <Button onClick={onOpen}>Join the Community</Button>
                <LoginModal isOpen={isOpen} onClose={onClose} />
             </ButtonGroup>
