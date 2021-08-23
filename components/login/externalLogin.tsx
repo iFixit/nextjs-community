@@ -28,7 +28,7 @@ function FacebookIcon() {
    );
 }
 
-export default function Networks() {
+export default function ExternalLogin() {
    return (
       <Flex align="center" direction="column" width="50%">
          <Text mt="48px">Or use one of these networks</Text>

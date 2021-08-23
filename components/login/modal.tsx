@@ -11,7 +11,7 @@ import {
    Box,
 } from '@chakra-ui/react';
 import { useState } from 'react';
-import Networks from './networks';
+import ExternalLogin from './externalLogin';
 import { ResetHeader, ResetForm } from './reset';
 import { LoginHeader, LoginForm } from './login';
 import { RegisterHeader, RegisterForm } from './register';
@@ -70,7 +70,7 @@ export default function LoginModal({ isOpen, onClose }: { isOpen: boolean; onClo
                   <Box mt="36px" padding="0 36px" width='50%'>
                      {getProperForm(resetMode, registerMode, toggleReset)}
                   </Box>
-                  <Networks />
+                  <ExternalLogin />
                </Stack>
             </ModalBody>
             <ModalFooter padding="0" bgColor="var(--color-gray-1)" />
