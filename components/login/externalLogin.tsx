@@ -33,10 +33,26 @@ export default function ExternalLogin() {
       <Flex align="center" direction="column" width="50%">
          <Text mt="48px">Or use one of these networks</Text>
          <Stack mt="16px" spacing="16px" direction="column">
-            <Button leftIcon={<GoogleIcon />} width="210px" height="50px" fontWeight="normal" color='#dd4d31' bgColor='#fcedea' _hover={{color:'white', bgColor:'#dd4d31'}}>
+            <Button
+               leftIcon={<GoogleIcon />}
+               width="210px"
+               height="50px"
+               fontWeight="normal"
+               color="#dd4d31"
+               bgColor="#fcedea"
+               _hover={{ color: 'white', bgColor: '#dd4d31' }}
+            >
                Sign in with Google
             </Button>
-            <Button leftIcon={<FacebookIcon />} width="210px" height="50px" fontWeight="normal" color='#3a589d' bgColor='#ebeef5' _hover={{color:'white', bgColor:'#3a589d'}}>
+            <Button
+               leftIcon={<FacebookIcon />}
+               width="210px"
+               height="50px"
+               fontWeight="normal"
+               color="#3a589d"
+               bgColor="#ebeef5"
+               _hover={{ color: 'white', bgColor: '#3a589d' }}
+            >
                Sign in with Facebook
             </Button>
          </Stack>
