@@ -27,7 +27,7 @@ export function LoginForm({ toggleReset }: { toggleReset: () => void }) {
    return (
       <React.Fragment>
          <Text>Email</Text>
-         <Input placeholder="Enter email"></Input>
+         <Input placeholder="Enter email"/>
          <Flex justify="space-between" mt="20px">
             <Text>Password</Text>
             <Button variant="link" fontSize="14px" color="var(--color-blue)" onClick={toggleReset}>
@@ -41,6 +41,7 @@ export function LoginForm({ toggleReset }: { toggleReset: () => void }) {
                bgColor="var(--color-blue)"
                color="white"
                _hover={{ bgColor: 'var(--color-blue)' }}
+               _active={{ bgColor: 'var(--color-blue)' }}
             >
                Log In
             </Button>

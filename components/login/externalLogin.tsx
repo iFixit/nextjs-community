@@ -34,7 +34,7 @@ export default function ExternalLogin() {
          align="center"
          direction="column"
          w={{ base: '100%', md: '50%' }}
-         mb={{ base: '72px', md: '0' }}
+         mb='72px'
       >
          <Text mt={{ base: '0', md: '48px' }} color="var(--color-gray-6)">
             Or use one of these networks
@@ -50,6 +50,7 @@ export default function ExternalLogin() {
                height="50px"
                fontWeight="normal"
                color="#dd4d31"
+               justifyContent="flex-start"
                borderColor="#f5cac1"
                bgColor="#fcedea"
                _hover={{ color: 'white', bgColor: '#dd4d31' }}
@@ -60,6 +61,7 @@ export default function ExternalLogin() {
                leftIcon={<FacebookIcon />}
                height="50px"
                fontWeight="normal"
+               justifyContent="flex-start"
                color="#3a589d"
                borderColor="#c4cde2"
                bgColor="#ebeef5"

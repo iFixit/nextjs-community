@@ -1,6 +1,4 @@
-import { AtSignIcon } from '@chakra-ui/icons';
 import {
-   Box,
    Button,
    Flex,
    Heading,
@@ -10,7 +8,7 @@ import {
    Link,
    Text,
 } from '@chakra-ui/react';
-import React, { useState } from 'react';
+import React from 'react';
 import PasswordInput from './password';
 
 export function RegisterHeader({ toggle }: { toggle: () => void }) {
@@ -63,13 +61,14 @@ export function RegisterForm() {
             bgColor="var(--color-blue)"
             color="white"
             _hover={{ bgColor: 'var(--color-blue)' }}
+            _active={{ bgColor: 'var(--color-blue)' }}
          >
             Create My Account
          </Button>
          <Text color="var(--color-gray-5)" fontSize="14px">
             By joining iFixit, you agree to our{' '}
-            <Link color="var(--color-blue)">Privacy Policy</Link> and{' '}
-            <Link color="var(--color-blue)">Terms</Link>
+            <Link href='https://www.ifixit.com/Info/Privacy' color="var(--color-blue)">Privacy Policy</Link> and{' '}
+            <Link href='https://www.ifixit.com/Info/Terms_of_Use' color="var(--color-blue)">Terms</Link>
          </Text>
       </React.Fragment>
    );
