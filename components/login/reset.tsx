@@ -20,7 +20,7 @@ export function ResetForm() {
    return (
       <Box>
          <Text>Email</Text>
-         <Input placeholder="Enter email"/>
+         <Input placeholder="Enter email" />
          <Flex justify="center">
             <Button
                mt="32px"

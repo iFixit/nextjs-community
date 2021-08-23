@@ -32,8 +32,15 @@ export function RegisterForm() {
       <React.Fragment>
          <Text>Name</Text>
          <Input placeholder="Albert Einstein" />
-         <Text padding='10px' mt="12px" fontSize='14px' color='var(--color-gray-5)' border="1px solid #f5cac1"
-               bgColor="#fcedea" borderRadius='4px'>
+         <Text
+            padding="10px"
+            mt="12px"
+            fontSize="14px"
+            color="var(--color-gray-5)"
+            border="1px solid #f5cac1"
+            bgColor="#fcedea"
+            borderRadius="4px"
+         >
             {
                'Please choose a descriptive, family friendly user name. User names\
              should be at least three and no more than 30 characters and not\
@@ -67,8 +74,13 @@ export function RegisterForm() {
          </Button>
          <Text color="var(--color-gray-5)" fontSize="14px">
             By joining iFixit, you agree to our{' '}
-            <Link href='https://www.ifixit.com/Info/Privacy' color="var(--color-blue)">Privacy Policy</Link> and{' '}
-            <Link href='https://www.ifixit.com/Info/Terms_of_Use' color="var(--color-blue)">Terms</Link>
+            <Link href="https://www.ifixit.com/Info/Privacy" color="var(--color-blue)">
+               Privacy Policy
+            </Link>{' '}
+            and{' '}
+            <Link href="https://www.ifixit.com/Info/Terms_of_Use" color="var(--color-blue)">
+               Terms
+            </Link>
          </Text>
       </React.Fragment>
    );

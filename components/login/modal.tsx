@@ -71,7 +71,12 @@ export default function LoginModal({ isOpen, onClose }: { isOpen: boolean; onClo
                   spacing="0"
                   direction={{ base: 'column', md: 'row' }}
                >
-                  <Flex direction='column' m="36px 0 48px" padding="0 36px" w={{ base: '100%', md: '50%' }}>
+                  <Flex
+                     direction="column"
+                     m="36px 0 48px"
+                     padding="0 36px"
+                     w={{ base: '100%', md: '50%' }}
+                  >
                      {getProperForm(resetMode, registerMode, toggleReset)}
                   </Flex>
                   <ExternalLogin />
