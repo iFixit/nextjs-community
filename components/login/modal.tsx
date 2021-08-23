@@ -8,6 +8,7 @@ import {
    Stack,
    StackDivider,
    ModalFooter,
+   Box,
 } from '@chakra-ui/react';
 import { useState } from 'react';
 import Networks from './networks';
@@ -54,15 +55,20 @@ export default function LoginModal({ isOpen, onClose }: { isOpen: boolean; onClo
                {getProperHeader(resetMode, registerMode, toggleReset, toggleRegister)}
             </ModalHeader>
             <ModalCloseButton />
-            <ModalBody bgColor="var(--color-gray-1)">
+            <ModalBody bgColor="var(--color-gray-1)" padding='0 8px'>
                <Stack
                   divider={
-                     <StackDivider borderColor="gray" display={{ base: 'none', md: 'unset' }} />
+                     <StackDivider
+                        borderColor="var(--color-gray-2)"
+                        display={{ base: 'none', md: 'unset' }}
+                     />
                   }
                   direction={{ base: 'column', md: 'row' }}
                   height={{ base: '620px', md: '360px' }}
                >
-                  {getProperForm(resetMode, registerMode, toggleReset)}
+                  <Box mt="30px" padding="0 36px" minWidth="50%">
+                     {getProperForm(resetMode, registerMode, toggleReset)}
+                  </Box>
                   <Networks />
                </Stack>
             </ModalBody>

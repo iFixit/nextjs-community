@@ -10,6 +10,7 @@
       "start": "next start"
    },
    "dependencies": {
+      "@chakra-ui/icons": "^1.0.15",
       "@chakra-ui/react": "^1.6.6",
       "@core-ds/primitives": "^1.5.0",
       "@emotion/react": "^11",
