@@ -1,29 +1,50 @@
-import { Box, Button, Heading, Input, Text } from '@chakra-ui/react';
+import { Box, Button, Flex, Heading, Input, Link, Text } from '@chakra-ui/react';
+import React from 'react';
 import PasswordInput from './password';
 
 export function RegisterHeader({ toggle }: { toggle: () => void }) {
    return (
-      <Box textAlign="center">
-         <Heading>Create Account</Heading>
-         <Text>Been here before?</Text>
-         <Button onClick={toggle}>Log in</Button>
-      </Box>
+      <Flex direction="column" align="center">
+         <Heading mt="8px">Create Account</Heading>
+         <Flex mt="12px" align="baseline">
+            <Text m="0 4px 0 0" fontWeight="normal" fontSize="14px" color="var(--color-gray-6)">
+               Been here before?
+            </Text>
+            <Button variant="link" fontSize="14px" color="var(--color-blue)" onClick={toggle}>
+               Log in
+            </Button>
+         </Flex>
+      </Flex>
    );
 }
 
 export function RegisterForm() {
    return (
-      <Box>
+      <React.Fragment>
          <Text>Name</Text>
          <Input></Input>
-         <Text>Unique Username</Text>
+         <Text mt='24px'>Unique Username</Text>
          <Input></Input>
-         <Text>Email</Text>
+         <Text mt='24px'>Email</Text>
          <Input></Input>
-         <Text>{"We'll use your email to send you updates on your community contributions."}</Text>
+         <Text fontSize="14px" color="var(--color-gray-5)">
+            {"We'll use your email to send you updates on your community contributions."}
+         </Text>
+         <Text mt='24px'>Password</Text>
          <PasswordInput></PasswordInput>
-         <Button>Create My Account</Button>
-         <Text>By joining iFixit, you agree to our Privacy Policy and Terms</Text>
-      </Box>
+         <Button
+            mt="32px"
+            bgColor="var(--color-blue)"
+            color="white"
+            _hover={{ bgColor: 'var(--color-blue)' }}
+         >
+            Create My Account
+         </Button>
+         <Text color="var(--color-gray-5)" fontSize="14px">
+            By joining iFixit, you agree to our{' '}
+            <Link color="var(--color-blue)">Privacy Policy</Link> and{' '}
+            <Link color="var(--color-blue)">Terms</Link>
+         </Text>
+      </React.Fragment>
    );
 }

@@ -9,6 +9,7 @@ import {
    StackDivider,
    ModalFooter,
    Box,
+   Flex,
 } from '@chakra-ui/react';
 import { useState } from 'react';
 import ExternalLogin from './externalLogin';
@@ -69,11 +70,10 @@ export default function LoginModal({ isOpen, onClose }: { isOpen: boolean; onClo
                   }
                   spacing="0"
                   direction={{ base: 'column', md: 'row' }}
-                  height={{ base: '620px', md: '360px' }}
                >
-                  <Box mt="36px" padding="0 36px" w={{ base: '100%', md: '50%' }}>
+                  <Flex direction='column' m="36px 0 48px" padding="0 36px" w={{ base: '100%', md: '50%' }}>
                      {getProperForm(resetMode, registerMode, toggleReset)}
-                  </Box>
+                  </Flex>
                   <ExternalLogin />
                </Stack>
             </ModalBody>
