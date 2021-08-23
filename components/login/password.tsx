@@ -8,8 +8,13 @@ export default function PasswordInput() {
 
    return (
       <InputGroup size="md">
-         <Input pr="4.5rem" type={show ? 'text' : 'password'} placeholder="Enter password" />
-         <InputRightElement mr='4px'>
+         <Input
+            pr="4.5rem"
+            type={show ? 'text' : 'password'}
+            placeholder="Enter password"
+            bgColor="white"
+         />
+         <InputRightElement mr="4px">
             <Button h="1.75rem" size="sm" onClick={handleClick}>
                {show ? <ViewOffIcon /> : <ViewIcon />}
             </Button>
