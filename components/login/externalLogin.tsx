@@ -31,7 +31,9 @@ function FacebookIcon() {
 export default function ExternalLogin() {
    return (
       <Flex align="center" direction="column" width="50%">
-         <Text mt="48px">Or use one of these networks</Text>
+         <Text mt="48px" color="var(--color-gray-6)">
+            Or use one of these networks
+         </Text>
          <Stack mt="16px" spacing="16px" direction="column">
             <Button
                leftIcon={<GoogleIcon />}

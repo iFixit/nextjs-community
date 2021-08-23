@@ -55,7 +55,11 @@ export default function LoginModal({ isOpen, onClose }: { isOpen: boolean; onClo
                {getProperHeader(resetMode, registerMode, toggleReset, toggleRegister)}
             </ModalHeader>
             <ModalCloseButton />
-            <ModalBody bgColor="var(--color-gray-1)" padding='0' borderTop='1px solid var(--color-gray-2)'>
+            <ModalBody
+               bgColor="var(--color-gray-1)"
+               padding="0"
+               borderTop="1px solid var(--color-gray-2)"
+            >
                <Stack
                   divider={
                      <StackDivider
@@ -63,11 +67,11 @@ export default function LoginModal({ isOpen, onClose }: { isOpen: boolean; onClo
                         display={{ base: 'none', md: 'unset' }}
                      />
                   }
-                  spacing='0'
+                  spacing="0"
                   direction={{ base: 'column', md: 'row' }}
                   height={{ base: '620px', md: '360px' }}
                >
-                  <Box mt="36px" padding="0 36px" width='50%'>
+                  <Box mt="36px" padding="0 36px" width="50%">
                      {getProperForm(resetMode, registerMode, toggleReset)}
                   </Box>
                   <ExternalLogin />
