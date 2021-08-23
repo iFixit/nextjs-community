@@ -71,7 +71,7 @@ export default function LoginModal({ isOpen, onClose }: { isOpen: boolean; onClo
                   direction={{ base: 'column', md: 'row' }}
                   height={{ base: '620px', md: '360px' }}
                >
-                  <Box mt="36px" padding="0 36px" width="50%">
+                  <Box mt="36px" padding="0 36px" w={{ base: '100%', md: '50%' }}>
                      {getProperForm(resetMode, registerMode, toggleReset)}
                   </Box>
                   <ExternalLogin />

@@ -30,17 +30,22 @@ function FacebookIcon() {
 
 export default function ExternalLogin() {
    return (
-      <Flex align="center" direction="column" width="50%">
+      <Flex align="center" direction="column" w={{ base: '100%', md: '50%' }}>
          <Text mt="48px" color="var(--color-gray-6)">
             Or use one of these networks
          </Text>
-         <Stack mt="16px" spacing="16px" direction="column">
+         <Stack
+            w={{ base: '80%', sm: '60%', md: '210px' }}
+            mt="16px"
+            spacing="16px"
+            direction="column"
+         >
             <Button
                leftIcon={<GoogleIcon />}
-               width="210px"
                height="50px"
                fontWeight="normal"
                color="#dd4d31"
+               borderColor="#f5cac1"
                bgColor="#fcedea"
                _hover={{ color: 'white', bgColor: '#dd4d31' }}
             >
@@ -48,10 +53,10 @@ export default function ExternalLogin() {
             </Button>
             <Button
                leftIcon={<FacebookIcon />}
-               width="210px"
                height="50px"
                fontWeight="normal"
                color="#3a589d"
+               borderColor="#c4cde2"
                bgColor="#ebeef5"
                _hover={{ color: 'white', bgColor: '#3a589d' }}
             >
