@@ -8,7 +8,7 @@ import {
    Link,
    Text,
 } from '@chakra-ui/react';
-import React from 'react';
+import React, { ChangeEvent, useState } from 'react';
 import PasswordInput from './password';
 
 export function RegisterHeader({ toggle }: { toggle: () => void }) {
@@ -28,25 +28,42 @@ export function RegisterHeader({ toggle }: { toggle: () => void }) {
 }
 
 export function RegisterForm() {
+   const [name, setName] = useState('');
+   const handleChange = (event: ChangeEvent<HTMLInputElement>) => setName(event.target.value);
+
+   function isValidName(name: string): boolean {
+      const length = name.length;
+      const validLength = length >= 3 && length <= 30;
+      const validChars = !name.includes('<') && !name.includes('>');
+      return validLength && validChars;
+   }
+
    return (
       <React.Fragment>
          <Text>Name</Text>
-         <Input placeholder="Albert Einstein" />
-         <Text
-            padding="10px"
-            mt="12px"
-            fontSize="14px"
-            color="var(--color-gray-5)"
-            border="1px solid #f5cac1"
-            bgColor="#fcedea"
-            borderRadius="4px"
-         >
-            {
-               'Please choose a descriptive, family friendly user name. User names\
+         <Input
+            placeholder="Albert Einstein"
+            onChange={handleChange}
+            isInvalid={!isValidName(name)}
+            errorBorderColor="#dd4d31"
+         />
+         {!isValidName(name) && (
+            <Text
+               padding="10px"
+               mt="12px"
+               fontSize="14px"
+               color="var(--color-gray-5)"
+               border="1px solid #f5cac1"
+               bgColor="#fcedea"
+               borderRadius="4px"
+            >
+               {
+                  'Please choose a descriptive, family friendly user name. User names\
              should be at least three and no more than 30 characters and not\
              include the < or > characters.'
-            }
-         </Text>
+               }
+            </Text>
+         )}
          <Text mt="24px">Unique Username</Text>
          <InputGroup>
             <InputLeftElement pointerEvents="none" color="var(--color-gray-4)">
