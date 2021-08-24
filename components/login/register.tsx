@@ -29,6 +29,7 @@ export function RegisterHeader({ toggle }: { toggle: () => void }) {
 
 export function RegisterForm() {
    const [name, setName] = useState('');
+   const [showAlert, setShowAlert] = useState(false);
    const handleChange = (event: ChangeEvent<HTMLInputElement>) => setName(event.target.value);
 
    function isValidName(name: string): boolean {
@@ -44,10 +45,11 @@ export function RegisterForm() {
          <Input
             placeholder="Albert Einstein"
             onChange={handleChange}
-            isInvalid={!isValidName(name)}
+            onSelect={() => setShowAlert(true)}
+            isInvalid={!isValidName(name) && showAlert}
             errorBorderColor="#dd4d31"
          />
-         {!isValidName(name) && (
+         {!isValidName(name) && showAlert && (
             <Text
                padding="10px"
                mt="12px"
