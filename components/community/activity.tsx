@@ -1,7 +1,8 @@
-import { Box, Flex, Heading, SimpleGrid, Text } from '@chakra-ui/react';
+import { Box, Center, Flex, Heading, SimpleGrid, Text } from '@chakra-ui/react';
 import Image from 'next/image';
 import React from 'react';
 import { Link } from '@chakra-ui/react';
+import { WarningIcon } from '@chakra-ui/icons';
 
 export interface Activity {
    text: string;
@@ -99,11 +100,22 @@ export default function ActivityDisplay({ data }: { data: Activity[] }) {
          >
             Latest Community Activity
          </Heading>
-         <SimpleGrid columns={{ base: 1, sm: 2, md: 3 }} spacing={7}>
-            {data.map((activity, i) => (
-               <ActivityCard key={i} data={activity} />
-            ))}
-         </SimpleGrid>
+         {data ? (
+            <SimpleGrid columns={{ base: 1, sm: 2, md: 3 }} spacing={7}>
+               {data.map((activity, i) => (
+                  <ActivityCard key={i} data={activity} />
+               ))}
+            </SimpleGrid>
+         ) : (
+            <Center>
+               <Flex direction="column" align="center" textAlign="center" padding="50px 0">
+                  <WarningIcon w={7} h={7} color="#e23715" />
+                  <Heading as="h3" fontSize="18px" fontWeight="normal">
+                     {"We're having trouble loading this right now."}
+                  </Heading>
+               </Flex>
+            </Center>
+         )}
       </React.Fragment>
    );
 }
