@@ -8,7 +8,6 @@ import {
    Stack,
    StackDivider,
    ModalFooter,
-   Box,
    Flex,
 } from '@chakra-ui/react';
 import { useState } from 'react';

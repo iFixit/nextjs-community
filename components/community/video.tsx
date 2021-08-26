@@ -1,4 +1,5 @@
 import { AspectRatio, Button, Flex, Heading, Link, Text } from '@chakra-ui/react';
+import links from '../../lib/links'
 
 export default function VideoDisplay() {
    const videoLink = 'https://www.youtube-nocookie.com/embed/O7CSWHVTUT8?rel=0';
@@ -35,7 +36,7 @@ export default function VideoDisplay() {
           fix something, the more people will do it.'
                }
             </Text>
-            <Link _hover={{ textDecoration: 'none' }} href="https://www.ifixit.com/New">
+            <Link _hover={{ textDecoration: 'none' }} href={links.NEW}>
                <Button variant="invertOnHover">{'Start a New Page'}</Button>
             </Link>
          </Flex>

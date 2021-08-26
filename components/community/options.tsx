@@ -3,6 +3,7 @@ import { Button, Flex, Stack, Link } from '@chakra-ui/react';
 import { Box, Heading, Text } from '@chakra-ui/layout';
 import { getImage } from '../../lib/images';
 import { isEnglish } from '../../lib/lang';
+import links from '../../lib/links';
 
 interface Option {
    title: string;
@@ -19,7 +20,7 @@ const optionSolve: Option = {
       'Get help from friendly fixers and share a helping \
   hand with others around the world.',
    button: 'Answers Forum',
-   link: 'https://www.ifixit.com/Answers',
+   link: links.ANSWERS,
    image: getImage('Community/solve'),
    icon: getImage('Community/solve-icon'),
 };
@@ -30,7 +31,7 @@ const optionImprove: Option = {
       'Help us improve how-to guides that others have \
     started and become a guardian of good quality.',
    button: 'Improve Guides',
-   link: 'https://www.ifixit.com/Contribute',
+   link: links.CONTRIBUTE,
    image: getImage('Community/improve'),
    icon: getImage('Community/improve-icon'),
 };
@@ -40,7 +41,7 @@ const optionTeach: Option = {
    description: 'No one knows how to fix everything, but\
     everyone knows how to fix something.',
    button: 'Create a Guide',
-   link: 'https://www.ifixit.com/Guide/new',
+   link: links.GUIDE_NEW,
    image: getImage('Community/teach'),
    icon: getImage('Community/teach-icon'),
 };
@@ -51,7 +52,7 @@ const optionTranslate: Option = {
       'Translate iFixit into your mother tongue and \
     make repair information available to everyone!',
    button: 'Start Translating',
-   link: 'https://www.ifixit.com/Translate',
+   link: links.TRANSLATE,
    image: getImage('Community/help'),
    icon: getImage('Community/help-icon'),
 };

@@ -9,6 +9,7 @@ const links = {
    MODERATION: 'https://www.ifixit.com/Moderation',
    USE_GUIDELINES: 'https://www.ifixit.com/Info/Use_Guidelines',
    ANSWERS: 'https://www.ifixit.com/Answers',
+   NEW: 'https://www.ifixit.com/New',
    GUIDE_NEW: 'https://www.ifixit.com/Guide/new',
    ABOUT_US: 'https://www.ifixit.com/Info/index',
    NEWSLETTER: 'https://www.ifixit.com/Newsletter',
@@ -28,7 +29,7 @@ const links = {
    REPAIR_ORG: 'https://www.repair.org/',
    LICENSING: 'https://www.ifixit.com/Info/Licensing',
    PRIVACY: 'https://www.ifixit.com/Info/Privacy',
-   TERMS_OF_USE: 'https://www.ifixit.com/Info/Terms_of_Use', 
+   TERMS_OF_USE: 'https://www.ifixit.com/Info/Terms_of_Use',
 };
 
 export default links;

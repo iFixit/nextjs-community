@@ -14,6 +14,7 @@ import {
 import { useRouter } from 'next/dist/client/router';
 import React from 'react';
 import LoginModal from '../login/modal';
+import links from '../../lib/links';
 
 const isOnIfixit = true;
 const isMod = true;
@@ -27,42 +28,42 @@ interface TabData {
 
 const tabData: Array<TabData> = [
    {
-      url: 'https://www.ifixit.com/Community',
+      url: links.COMMUNITY,
       label: 'Community',
       showTab: isOnIfixit,
    },
    {
-      url: 'https://www.ifixit.com/Leaderboard',
+      url: links.LEADERBOARD,
       label: 'Leaderboard',
       showTab: true,
    },
    {
-      url: 'https://www.ifixit.com/Teams/all',
+      url: links.ALL_TEAMS,
       label: 'Teams',
       showTab: true,
    },
    {
-      url: 'https://www.ifixit.com/Business',
+      url: links.BUSINESS,
       label: 'Businesses',
       showTab: isOnIfixit,
    },
    {
-      url: 'https://www.ifixit.com/Contribute',
+      url: links.CONTRIBUTE,
       label: 'Contribute',
       showTab: true,
    },
    {
-      url: 'https://www.ifixit.com/Translate',
+      url: links.TRANSLATE,
       label: 'Translate',
       showTab: true,
    },
    {
-      url: 'https://www.ifixit.com/Patrol',
+      url: links.PATROL,
       label: 'Patrol',
       showTab: isMod && patrolEnabled,
    },
    {
-      url: 'https://www.ifixit.com/Moderation',
+      url: links.MODERATION,
       label: 'Moderation',
       showTab: isMod,
    },
@@ -137,9 +138,7 @@ export default function NavigationDisplay({ title }: { title: string }) {
                spacing="var(--space-4)"
                marginTop={{ base: 'var(--space-4)', md: 0 }}
             >
-               <Button onClick={() => router.push('https://www.ifixit.com/Info/Use_Guidelines')}>
-                  How this Works
-               </Button>
+               <Button onClick={() => router.push(links.USE_GUIDELINES)}>How this Works</Button>
                <Button onClick={onOpen}>Join the Community</Button>
                <LoginModal isOpen={isOpen} onClose={onClose} />
             </ButtonGroup>
