@@ -1,4 +1,16 @@
-import { Box, Button, Flex, Heading, Input, Text } from '@chakra-ui/react';
+import {
+   Box,
+   Button,
+   Flex,
+   FormControl,
+   FormHelperText,
+   FormLabel,
+   Heading,
+   Input,
+   Text,
+} from '@chakra-ui/react';
+import { useToast } from '@chakra-ui/react';
+import React, { useState } from 'react';
 
 export function ResetHeader({ toggle }: { toggle: () => void }) {
    return (
@@ -17,10 +29,48 @@ export function ResetHeader({ toggle }: { toggle: () => void }) {
 }
 
 export function ResetForm() {
+   const [email, setEmail] = useState('');
+   const toast = useToast();
+   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+      setEmail(event.target.value);
+   };
+
+   function showToast(success: boolean) {
+      if (success) {
+         toast({
+            title: "We've emailed you a password reset link.",
+            position: 'top',
+            status: 'success',
+            duration: 2000,
+         });
+      } else {
+         toast({
+            title: "We couldn't find an account with that email.",
+            position: 'top',
+            status: 'error',
+            duration: 2000,
+         });
+      }
+   }
+
+   async function resetPassword() {
+      await fetch('https://www.ifixit.com/api/2.0/users/reset_password', {
+         method: 'POST',
+         body: JSON.stringify({ email: email }),
+      }).then(response => {
+         showToast(response.status < 400);
+      });
+   }
+
    return (
       <Box>
-         <Text>Email</Text>
-         <Input placeholder="Enter email" />
+         <FormControl id="email">
+            <FormLabel>Email address</FormLabel>
+            <Input onChange={handleChange} type="email" />
+            <FormHelperText>
+               {"You'll receive an email containing a link to reset your password."}
+            </FormHelperText>
+         </FormControl>
          <Flex justify="center">
             <Button
                mt="32px"
@@ -28,6 +78,7 @@ export function ResetForm() {
                color="white"
                _hover={{ bgColor: 'var(--color-blue)' }}
                _active={{ bgColor: 'var(--color-blue)' }}
+               onClick={() => resetPassword()}
             >
                Reset Password
             </Button>
