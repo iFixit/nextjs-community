@@ -35,21 +35,31 @@ export function ResetForm() {
       setEmail(event.target.value);
    };
 
-   function showToast(success: boolean) {
-      if (success) {
-         toast({
-            title: "We've emailed you a password reset link.",
-            position: 'top',
-            status: 'success',
-            duration: 2000,
-         });
-      } else {
-         toast({
-            title: "We couldn't find an account with that email.",
-            position: 'top',
-            status: 'error',
-            duration: 2000,
-         });
+   function showToast(response: number) {
+      switch (response) {
+         case 403:
+            toast({
+               title: "You've requested too many password reset emails.",
+               position: 'top',
+               status: 'error',
+               duration: 2000,
+            });
+            break;
+         case 200:
+            toast({
+               title: "We've emailed you a password reset link.",
+               position: 'top',
+               status: 'success',
+               duration: 2000,
+            });
+            break;
+         default:
+            toast({
+               title: 'There is no account associated with this email.',
+               position: 'top',
+               status: 'error',
+               duration: 2000,
+            });
       }
    }
 
@@ -57,9 +67,7 @@ export function ResetForm() {
       await fetch('https://www.ifixit.com/api/2.0/users/reset_password', {
          method: 'POST',
          body: JSON.stringify({ email: email }),
-      }).then(response => {
-         showToast(response.status < 400);
-      });
+      }).then(response => showToast(response.status));
    }
 
    return (
