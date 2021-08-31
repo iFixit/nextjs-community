@@ -71,7 +71,12 @@ export function ResetForm() {
    }
 
    return (
-      <Box>
+      <form
+         onSubmit={event => {
+            event.preventDefault();
+            resetPassword();
+         }}
+      >
          <FormControl id="email">
             <FormLabel>Email address</FormLabel>
             <Input onChange={handleChange} type="email" placeholder="Enter email" />
@@ -86,11 +91,11 @@ export function ResetForm() {
                color="white"
                _hover={{ bgColor: 'var(--color-blue)' }}
                _active={{ bgColor: 'var(--color-blue)' }}
-               onClick={() => resetPassword()}
+               type="submit"
             >
                Reset Password
             </Button>
          </Flex>
-      </Box>
+      </form>
    );
 }

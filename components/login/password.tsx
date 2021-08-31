@@ -20,7 +20,7 @@ export default function PasswordInput({
             placeholder="Enter password"
          />
          <InputRightElement mr="4px">
-            <Button h="1.75rem" size="sm" onClick={handleClick} border='none'>
+            <Button h="1.75rem" size="sm" onClick={handleClick} border="none">
                {show ? <ViewIcon /> : <ViewOffIcon />}
             </Button>
          </InputRightElement>

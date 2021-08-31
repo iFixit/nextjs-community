@@ -102,7 +102,12 @@ export function RegisterForm({ goToLogin }: { goToLogin: () => void }) {
    }
 
    return (
-      <React.Fragment>
+      <form
+         onSubmit={event => {
+            event.preventDefault();
+            register();
+         }}
+      >
          <FormControl>
             <FormLabel>Name</FormLabel>
             <Input
@@ -163,7 +168,7 @@ export function RegisterForm({ goToLogin }: { goToLogin: () => void }) {
             disabled={!allowSubmit()}
             _hover={{ bgColor: 'var(--color-blue)' }}
             _active={{ bgColor: 'var(--color-blue)' }}
-            onClick={register}
+            type="submit"
          >
             Create My Account
          </Button>
@@ -177,6 +182,6 @@ export function RegisterForm({ goToLogin }: { goToLogin: () => void }) {
                Terms
             </Link>
          </Text>
-      </React.Fragment>
+      </form>
    );
 }

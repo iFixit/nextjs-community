@@ -91,7 +91,12 @@ export function LoginForm({
    }
 
    return (
-      <React.Fragment>
+      <form
+         onSubmit={event => {
+            event.preventDefault();
+            performLogin();
+         }}
+      >
          <FormControl>
             <FormLabel>Email</FormLabel>
             <Input placeholder="Enter email" name="email" onChange={handleChange} />
@@ -110,14 +115,14 @@ export function LoginForm({
                mt="32px"
                bgColor="var(--color-blue)"
                color="white"
+               type="submit"
                disabled={!allowSubmit()}
                _hover={{ bgColor: 'var(--color-blue)' }}
                _active={{ bgColor: 'var(--color-blue)' }}
-               onClick={performLogin}
             >
                Log In
             </Button>
          </Flex>
-      </React.Fragment>
+      </form>
    );
 }
