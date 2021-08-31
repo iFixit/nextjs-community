@@ -16,7 +16,6 @@ const Button = {
       outline: {
          fontSize: cp.fontSize[1],
          borderColor: cp.color.gray3,
-         color: cp.color.black,
       },
       invertOnHover: {
          fontSize: cp.fontSize[1],

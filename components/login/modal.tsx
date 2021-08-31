@@ -44,7 +44,7 @@ export default function LoginModal({ isOpen, onClose }: { isOpen: boolean; onClo
    return (
       <Modal isOpen={isOpen} onClose={onClose}>
          <ModalOverlay />
-         <ModalContent overflow="hidden" w={{ base: '90%', md: '700px' }}>
+         <ModalContent overflow="hidden" w={{ base: '90%', md: '700px' }} mt="90px">
             <ModalHeader>{getProperHeader()}</ModalHeader>
             <ModalCloseButton />
             <ModalBody
