@@ -137,7 +137,12 @@ export function RegisterForm({ goToLogin }: { goToLogin: () => void }) {
                <InputLeftElement pointerEvents="none" color="var(--color-gray-4)">
                   @
                </InputLeftElement>
-               <Input name="unique_username" onChange={handleChange} placeholder="albert" />
+               <Input
+                  name="unique_username"
+                  onChange={handleChange}
+                  placeholder="albert"
+                  pl="28px"
+               />
             </InputGroup>
          </FormControl>
          <FormControl mt="24px">
