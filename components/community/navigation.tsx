@@ -12,7 +12,7 @@ import {
    useDisclosure,
 } from '@chakra-ui/react';
 import { useRouter } from 'next/dist/client/router';
-import React from 'react';
+import React, { useState } from 'react';
 import LoginModal from '../login/modal';
 import links from '../../lib/links';
 
@@ -120,6 +120,7 @@ function getActiveTabIndex(pageTitle: string) {
 
 export default function NavigationDisplay({ title }: { title: string }) {
    const { isOpen, onOpen, onClose } = useDisclosure();
+   const [user, setUser] = useState();
    const router = useRouter();
 
    return (
@@ -139,8 +140,8 @@ export default function NavigationDisplay({ title }: { title: string }) {
                marginTop={{ base: 'var(--space-4)', md: 0 }}
             >
                <Button onClick={() => router.push(links.USE_GUIDELINES)}>How this Works</Button>
-               <Button onClick={onOpen}>Join the Community</Button>
-               <LoginModal isOpen={isOpen} onClose={onClose} />
+               {!user && <Button onClick={onOpen}>Join the Community</Button>}
+               <LoginModal isOpen={isOpen} onClose={onClose} setUser={setUser} />
             </ButtonGroup>
          </Flex>
          <Box

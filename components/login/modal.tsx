@@ -10,13 +10,21 @@ import {
    ModalFooter,
    Flex,
 } from '@chakra-ui/react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import ExternalLogin from './externalLogin';
 import { ResetHeader, ResetForm } from './reset';
 import { LoginHeader, LoginForm } from './login';
 import { RegisterHeader, RegisterForm } from './register';
 
-export default function LoginModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
+export default function LoginModal({
+   isOpen,
+   onClose,
+   setUser,
+}: {
+   isOpen: boolean;
+   onClose: () => void;
+   setUser: React.Dispatch<React.SetStateAction<undefined>>;
+}) {
    const [mode, setMode] = useState('login');
 
    function getProperHeader() {
@@ -37,7 +45,13 @@ export default function LoginModal({ isOpen, onClose }: { isOpen: boolean; onClo
          case 'register':
             return <RegisterForm goToLogin={() => setMode('login')} />;
          default:
-            return <LoginForm goToReset={() => setMode('reset')} closeModal={onClose} />;
+            return (
+               <LoginForm
+                  goToReset={() => setMode('reset')}
+                  closeModal={onClose}
+                  setUser={setUser}
+               />
+            );
       }
    }
 

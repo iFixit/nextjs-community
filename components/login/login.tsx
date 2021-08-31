@@ -35,9 +35,11 @@ export function LoginHeader({ goToRegister }: { goToRegister: () => void }) {
 export function LoginForm({
    goToReset,
    closeModal,
+   setUser,
 }: {
    goToReset: () => void;
    closeModal: () => void;
+   setUser: React.Dispatch<React.SetStateAction<undefined>>;
 }) {
    const [login, setLogin] = useState<Login>({
       email: '',
@@ -63,6 +65,7 @@ export function LoginForm({
             .json()
             .then(data => ({ status: response.status, body: data }))
             .then(data => {
+               setUser(data.body);
                showFeedback(data.status < 400, data.body.message);
             })
       );
