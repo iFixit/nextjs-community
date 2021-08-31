@@ -37,7 +37,7 @@ export default function LoginModal({ isOpen, onClose }: { isOpen: boolean; onClo
          case 'register':
             return <RegisterForm goToLogin={() => setMode('login')} />;
          default:
-            return <LoginForm goToReset={() => setMode('reset')} />;
+            return <LoginForm goToReset={() => setMode('reset')} closeModal={onClose} />;
       }
    }
 

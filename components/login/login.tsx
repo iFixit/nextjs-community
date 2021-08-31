@@ -1,4 +1,13 @@
-import { Button, Flex, FormControl, FormLabel, Heading, Input, Text } from '@chakra-ui/react';
+import {
+   Button,
+   Flex,
+   FormControl,
+   FormLabel,
+   Heading,
+   Input,
+   Text,
+   useToast,
+} from '@chakra-ui/react';
 import React, { ChangeEvent, ChangeEventHandler, useState } from 'react';
 import PasswordInput from './password';
 
@@ -23,7 +32,13 @@ export function LoginHeader({ goToRegister }: { goToRegister: () => void }) {
    );
 }
 
-export function LoginForm({ goToReset }: { goToReset: () => void }) {
+export function LoginForm({
+   goToReset,
+   closeModal,
+}: {
+   goToReset: () => void;
+   closeModal: () => void;
+}) {
    const [login, setLogin] = useState<Login>({
       email: '',
       password: '',
@@ -33,10 +48,38 @@ export function LoginForm({ goToReset }: { goToReset: () => void }) {
       const value = event.target.value;
       setLogin({ ...login, [label]: value });
    };
+   const appId = 'be0ef8241c0be993ae73c407e6c536b9';
+   const toast = useToast();
 
-   const getToken = () => {
-      console.log(login);
-   };
+   async function performLogin() {
+      await fetch('https://bson.cominor.com/api/2.0/user/token', {
+         method: 'POST',
+         body: JSON.stringify(login),
+         headers: {
+            'X-App-Id': appId,
+         },
+      }).then(response =>
+         response
+            .json()
+            .then(data => ({ status: response.status, body: data.message }))
+            .then(data => showFeedback(data.status < 400, data.body))
+      );
+   }
+
+   function showFeedback(success: boolean, errMsg?: string) {
+      const successMsg = 'Login successful!';
+      const feedback = success ? successMsg : errMsg;
+      toast({
+         title: feedback,
+         position: 'top',
+         status: success ? 'success' : 'error',
+         duration: 7000,
+         isClosable: true,
+      });
+      if (success) {
+         closeModal();
+      }
+   }
 
    function allowSubmit(): boolean {
       return login.email.length > 0 && login.password.length > 0;
@@ -65,7 +108,7 @@ export function LoginForm({ goToReset }: { goToReset: () => void }) {
                disabled={!allowSubmit()}
                _hover={{ bgColor: 'var(--color-blue)' }}
                _active={{ bgColor: 'var(--color-blue)' }}
-               onClick={getToken}
+               onClick={performLogin}
             >
                Log In
             </Button>
