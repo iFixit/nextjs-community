@@ -61,8 +61,10 @@ export function LoginForm({
       }).then(response =>
          response
             .json()
-            .then(data => ({ status: response.status, body: data.message }))
-            .then(data => showFeedback(data.status < 400, data.body))
+            .then(data => ({ status: response.status, body: data }))
+            .then(data => {
+               showFeedback(data.status < 400, data.body.message);
+            })
       );
    }
 
