@@ -1,5 +1,5 @@
 import { Button, Input, InputGroup, InputRightElement } from '@chakra-ui/react';
-import { ChangeEvent, ChangeEventHandler, useState } from 'react';
+import { ChangeEventHandler, useState } from 'react';
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 
 export default function PasswordInput({
@@ -21,7 +21,7 @@ export default function PasswordInput({
          />
          <InputRightElement mr="4px">
             <Button h="1.75rem" size="sm" onClick={handleClick}>
-               {show ? <ViewOffIcon /> : <ViewIcon />}
+               {show ? <ViewIcon /> : <ViewOffIcon />}
             </Button>
          </InputRightElement>
       </InputGroup>
