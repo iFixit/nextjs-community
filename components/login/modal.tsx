@@ -16,44 +16,36 @@ import { ResetHeader, ResetForm } from './reset';
 import { LoginHeader, LoginForm } from './login';
 import { RegisterHeader, RegisterForm } from './register';
 
-function getProperHeader(
-   resetMode: boolean,
-   registerMode: boolean,
-   toggleReset: () => void,
-   toggleRegister: () => void
-) {
-   if (resetMode) {
-      return <ResetHeader toggle={toggleReset} />;
-   }
-   if (registerMode) {
-      return <RegisterHeader toggle={toggleRegister} />;
-   }
-   return <LoginHeader toggleRegister={toggleRegister} />;
-}
-
-function getProperForm(resetMode: boolean, registerMode: boolean, toggleReset: () => void) {
-   if (resetMode) {
-      return <ResetForm />;
-   }
-   if (registerMode) {
-      return <RegisterForm />;
-   }
-   return <LoginForm toggleReset={toggleReset} />;
-}
-
 export default function LoginModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
-   const [resetMode, setResetMode] = useState(false);
-   const [registerMode, setRegisterMode] = useState(false);
-   const toggleReset = () => setResetMode(!resetMode);
-   const toggleRegister = () => setRegisterMode(!registerMode);
+   const [mode, setMode] = useState('login');
+
+   function getProperHeader() {
+      switch (mode) {
+         case 'reset':
+            return <ResetHeader goToLogin={() => setMode('login')} />;
+         case 'register':
+            return <RegisterHeader goToLogin={() => setMode('login')} />;
+         default:
+            return <LoginHeader goToRegister={() => setMode('register')} />;
+      }
+   }
+
+   function getProperForm() {
+      switch (mode) {
+         case 'reset':
+            return <ResetForm />;
+         case 'register':
+            return <RegisterForm goToLogin={() => setMode('login')} />;
+         default:
+            return <LoginForm goToReset={() => setMode('reset')} />;
+      }
+   }
 
    return (
       <Modal isOpen={isOpen} onClose={onClose}>
          <ModalOverlay />
          <ModalContent overflow="hidden" w={{ base: '90%', md: '700px' }}>
-            <ModalHeader>
-               {getProperHeader(resetMode, registerMode, toggleReset, toggleRegister)}
-            </ModalHeader>
+            <ModalHeader>{getProperHeader()}</ModalHeader>
             <ModalCloseButton />
             <ModalBody
                bgColor="var(--color-gray-1)"
@@ -76,7 +68,7 @@ export default function LoginModal({ isOpen, onClose }: { isOpen: boolean; onClo
                      padding="0 36px"
                      w={{ base: '100%', md: '50%' }}
                   >
-                     {getProperForm(resetMode, registerMode, toggleReset)}
+                     {getProperForm()}
                   </Flex>
                   <ExternalLogin />
                </Stack>

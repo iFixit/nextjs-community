@@ -12,7 +12,7 @@ import {
 import { useToast } from '@chakra-ui/react';
 import React, { useState } from 'react';
 
-export function ResetHeader({ toggle }: { toggle: () => void }) {
+export function ResetHeader({ goToLogin }: { goToLogin: () => void }) {
    return (
       <Flex direction="column" align="center">
          <Heading mt="8px">Reset Password</Heading>
@@ -20,7 +20,7 @@ export function ResetHeader({ toggle }: { toggle: () => void }) {
             <Text m="0 4px 0 0" fontWeight="normal" fontSize="14px" color="var(--color-gray-6)">
                Remember your password now?
             </Text>
-            <Button variant="link" fontSize="14px" color="var(--color-blue)" onClick={toggle}>
+            <Button variant="link" fontSize="14px" color="var(--color-blue)" onClick={goToLogin}>
                Log in
             </Button>
          </Flex>
