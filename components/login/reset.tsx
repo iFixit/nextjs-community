@@ -74,7 +74,7 @@ export function ResetForm() {
       <Box>
          <FormControl id="email">
             <FormLabel>Email address</FormLabel>
-            <Input onChange={handleChange} type="email" />
+            <Input onChange={handleChange} type="email" placeholder="Enter email" />
             <FormHelperText>
                {"You'll receive an email containing a link to reset your password."}
             </FormHelperText>
