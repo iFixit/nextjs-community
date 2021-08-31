@@ -45,7 +45,6 @@ const styles = {
          fontSize: 'unset',
       },
       'button, input, optgroup, select, textarea': {
-         color: cp.color.black,
          fontSize: cp.fontSize[1],
       },
       'button, textarea': {
