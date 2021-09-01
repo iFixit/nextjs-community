@@ -65,8 +65,11 @@ export function LoginForm({
             .json()
             .then(data => ({ status: response.status, body: data }))
             .then(data => {
-               setUser(data.body);
-               showFeedback(data.status < 400, data.body.message, data.body.username);
+               const success = data.status < 400;
+               if (success) {
+                  setUser(data.body);
+               }
+               showFeedback(success, data.body.message, data.body.username);
             })
       );
    }
@@ -82,6 +85,7 @@ export function LoginForm({
          isClosable: true,
       });
       if (success) {
+         console.log('success')
          closeModal();
       }
    }
