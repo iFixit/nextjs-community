@@ -66,13 +66,13 @@ export function LoginForm({
             .then(data => ({ status: response.status, body: data }))
             .then(data => {
                setUser(data.body);
-               showFeedback(data.status < 400, data.body.message);
+               showFeedback(data.status < 400, data.body.message, data.body.username);
             })
       );
    }
 
-   function showFeedback(success: boolean, errMsg?: string) {
-      const successMsg = 'Login successful!';
+   function showFeedback(success: boolean, errMsg?: string, username?: string) {
+      const successMsg = 'Welcome back, ' + username + '!';
       const feedback = success ? successMsg : errMsg;
       toast({
          title: feedback,
