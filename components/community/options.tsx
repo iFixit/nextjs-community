@@ -2,7 +2,6 @@ import Image from 'next/image';
 import { Button, Flex, Stack, Link } from '@chakra-ui/react';
 import { Box, Heading, Text } from '@chakra-ui/layout';
 import { getImage } from '../../lib/images';
-import { isEnglish } from '../../lib/lang';
 import links from '../../lib/links';
 
 interface Option {
@@ -132,7 +131,7 @@ function OptionCard({ option }: { option: Option }) {
    );
 }
 
-export default function OptionsDisplay() {
+export default function OptionsDisplay({ userLang }: { userLang: string }) {
    return (
       <Stack
          direction={{ base: 'column', md: 'row' }}
@@ -142,7 +141,7 @@ export default function OptionsDisplay() {
       >
          <OptionCard option={optionSolve} />
          <OptionCard option={optionImprove} />
-         {isEnglish() ? (
+         {userLang === 'en' ? (
             <OptionCard option={optionTeach} />
          ) : (
             <OptionCard option={optionTranslate} />

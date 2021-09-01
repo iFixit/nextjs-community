@@ -12,7 +12,7 @@ import {
    useDisclosure,
 } from '@chakra-ui/react';
 import { useRouter } from 'next/dist/client/router';
-import React, { useState } from 'react';
+import React from 'react';
 import LoginModal from '../login/modal';
 import links from '../../lib/links';
 

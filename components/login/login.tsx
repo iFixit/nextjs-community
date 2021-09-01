@@ -70,6 +70,7 @@ export function LoginForm({
                   setUser(data.body);
                }
                showFeedback(success, data.body.message, data.body.username);
+               return success;
             })
       );
    }
@@ -84,10 +85,6 @@ export function LoginForm({
          duration: 7000,
          isClosable: true,
       });
-      if (success) {
-         console.log('success')
-         closeModal();
-      }
    }
 
    function allowSubmit(): boolean {
@@ -98,7 +95,9 @@ export function LoginForm({
       <form
          onSubmit={event => {
             event.preventDefault();
-            performLogin();
+            if (performLogin()) {
+               closeModal();
+            }
          }}
       >
          <FormControl>

@@ -2,10 +2,10 @@ import React from 'react';
 import OptionsDisplay from './options';
 import VideoDisplay from './video';
 
-export default function InfoDisplay() {
+export default function InfoDisplay({ userLang }: { userLang: string }) {
    return (
       <React.Fragment>
-         <OptionsDisplay />
+         <OptionsDisplay userLang={userLang} />
          <VideoDisplay />
       </React.Fragment>
    );

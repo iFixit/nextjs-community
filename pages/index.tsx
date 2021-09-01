@@ -3,6 +3,7 @@ import ActivityDisplay, { Activity } from '../components/community/activity';
 import InfoDisplay from '../components/community/info';
 import NavigationDisplay from '../components/community/navigation';
 import GuidePage from '../components/page/guidePage';
+import { getLocale } from '../lib/lang';
 
 export const siteTitle = 'Community';
 
@@ -16,8 +17,9 @@ export default function LandingPage({
    const [user, setUser] = useState({});
    const isLoggedIn = (user as any).userid;
    const userPrivilege = (user as any).privileges;
+   const userLang = (user as any).langid;
    const isMod = userPrivilege
-      ? (userPrivilege as Array<string>).includes('Admin') || userPrivilege.includes('Moderator')
+      ? userPrivilege.includes('Admin') || userPrivilege.includes('Moderator')
       : false;
 
    return (
@@ -28,7 +30,7 @@ export default function LandingPage({
             isLoggedIn={isLoggedIn}
             isMod={isMod}
          />
-         <InfoDisplay />
+         <InfoDisplay userLang={userLang ? userLang : getLocale()} />
          <ActivityDisplay data={data.activity} />
       </GuidePage>
    );
