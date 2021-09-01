@@ -39,7 +39,7 @@ export function LoginForm({
 }: {
    goToReset: () => void;
    closeModal: () => void;
-   setUser: React.Dispatch<React.SetStateAction<undefined>>;
+   setUser: React.Dispatch<React.SetStateAction<{}>>;
 }) {
    const [login, setLogin] = useState<Login>({
       email: '',

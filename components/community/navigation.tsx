@@ -22,22 +22,22 @@ interface TabData {
    showTab: boolean;
 }
 
-export default function NavigationDisplay({ title }: { title: string }) {
+export default function NavigationDisplay({
+   title,
+   setUser,
+   isLoggedIn,
+   isMod,
+}: {
+   title: string;
+   setUser: React.Dispatch<React.SetStateAction<{}>>;
+   isLoggedIn: boolean;
+   isMod: boolean;
+}) {
    const { isOpen, onOpen, onClose } = useDisclosure();
-   const [user, setUser] = useState();
    const router = useRouter();
-   const isMod = true;
    const isOnIfixit = true;
    const patrolEnabled = true;
    const visibleTabs = getTabs();
-
-   // async function isModerator() {
-   //    if (user and user.userid) {
-   //       await fetch('https://bson.cominor.com/api/2.0/community/isMod?'+ user.userid);
-   //       .then(response => response.json())
-   //       .then(data => console.log(data));
-   //    }
-   // }
 
    function getTabs(): Array<TabData> {
       return [
@@ -148,7 +148,7 @@ export default function NavigationDisplay({ title }: { title: string }) {
                marginTop={{ base: 'var(--space-4)', md: 0 }}
             >
                <Button onClick={() => router.push(links.USE_GUIDELINES)}>How this Works</Button>
-               {!user && <Button onClick={onOpen}>Join the Community</Button>}
+               {!isLoggedIn && <Button onClick={onOpen}>Join the Community</Button>}
                <LoginModal isOpen={isOpen} onClose={onClose} setUser={setUser} />
             </ButtonGroup>
          </Flex>

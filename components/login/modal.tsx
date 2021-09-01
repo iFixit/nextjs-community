@@ -23,7 +23,7 @@ export default function LoginModal({
 }: {
    isOpen: boolean;
    onClose: () => void;
-   setUser: React.Dispatch<React.SetStateAction<undefined>>;
+   setUser: React.Dispatch<React.SetStateAction<{}>>;
 }) {
    const [mode, setMode] = useState('login');
 

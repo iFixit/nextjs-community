@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ActivityDisplay, { Activity } from '../components/community/activity';
 import InfoDisplay from '../components/community/info';
 import NavigationDisplay from '../components/community/navigation';
@@ -13,9 +13,21 @@ export default function LandingPage({
       activity: Activity[];
    };
 }) {
+   const [user, setUser] = useState({});
+   const isLoggedIn = (user as any).userid;
+   const userPrivilege = (user as any).privileges;
+   const isMod = userPrivilege
+      ? (userPrivilege as Array<string>).includes('Admin') || userPrivilege.includes('Moderator')
+      : false;
+
    return (
       <GuidePage title={siteTitle}>
-         <NavigationDisplay title={siteTitle} />
+         <NavigationDisplay
+            title={siteTitle}
+            setUser={setUser}
+            isLoggedIn={isLoggedIn}
+            isMod={isMod}
+         />
          <InfoDisplay />
          <ActivityDisplay data={data.activity} />
       </GuidePage>
