@@ -1,7 +1,7 @@
 import { chakra } from '@chakra-ui/react';
 import Head from 'next/head';
 import React from 'react';
-import Footer from '../ifixit/footer';
+import Footer from '../ifixit/footer/footer';
 import Header from '../ifixit/header';
 
 export default function GuidePage({
@@ -12,7 +12,6 @@ export default function GuidePage({
    children: React.ReactNode;
 }) {
    const Main = chakra('main');
-
    return (
       <React.Fragment>
          <Head>
