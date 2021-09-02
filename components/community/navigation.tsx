@@ -40,7 +40,7 @@ export default function NavigationDisplay({
    const visibleTabs = getTabs();
 
    useEffect(() => {
-      setOnIfixit(window.location.hostname.toLowerCase() == 'ifixit');
+      // setOnIfixit(window.location.hostname.toLowerCase() == 'ifixit');
    }, []);
 
    function getTabs(): Array<TabData> {

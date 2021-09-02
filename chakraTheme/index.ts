@@ -13,6 +13,7 @@ import Tabs from './components/Tabs';
 import { theme } from '@ifixit/react-components';
 
 theme.breakpoints = breakpoints;
+theme.components = { Button, Input, Modal, Tabs };
 const extendedTheme: Theme = extendTheme(theme);
 
 export default extendedTheme;
