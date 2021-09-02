@@ -137,7 +137,7 @@ export default function NavigationDisplay({
    return (
       <React.Fragment>
          <Flex
-            margin="var(--space-8) 0 var(--space-5)"
+            mb="var(--space-5)"
             align="center"
             direction={{ base: 'column', md: 'row' }}
             justify={{ base: 'center', md: 'space-between' }}

@@ -12,13 +12,14 @@ export default function GuidePage({
    children: React.ReactNode;
 }) {
    const Main = chakra('main');
+
    return (
       <React.Fragment>
          <Head>
             <title>{title + ' - iFixit'}</title>
          </Head>
          <Header />
-         <Main margin="0 auto" maxWidth={{ base: '90%', xl: '998px' }}>
+         <Main margin="var(--space-8) auto var(--space-12)" maxWidth={{ base: '90%', xl: '998px' }}>
             {children}
          </Main>
          <Footer />
