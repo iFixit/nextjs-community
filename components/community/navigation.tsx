@@ -12,7 +12,7 @@ import {
    useDisclosure,
 } from '@chakra-ui/react';
 import { useRouter } from 'next/dist/client/router';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import LoginModal from '../login/modal';
 import links from '../../lib/links';
 
@@ -33,18 +33,22 @@ export default function NavigationDisplay({
    isLoggedIn: boolean;
    isMod: boolean;
 }) {
+   const [onIfixit, setOnIfixit] = useState(true);
    const { isOpen, onOpen, onClose } = useDisclosure();
    const router = useRouter();
-   const isOnIfixit = true;
    const patrolEnabled = true;
    const visibleTabs = getTabs();
+
+   useEffect(() => {
+      setOnIfixit(window.location.hostname.toLowerCase() == 'ifixit');
+   }, []);
 
    function getTabs(): Array<TabData> {
       return [
          {
             url: links.COMMUNITY,
             label: 'Community',
-            showTab: isOnIfixit,
+            showTab: onIfixit,
          },
          {
             url: links.LEADERBOARD,
@@ -59,7 +63,7 @@ export default function NavigationDisplay({
          {
             url: links.BUSINESS,
             label: 'Businesses',
-            showTab: isOnIfixit,
+            showTab: onIfixit,
          },
          {
             url: links.CONTRIBUTE,
@@ -86,7 +90,6 @@ export default function NavigationDisplay({
 
    function ChakraTabs(title: string) {
       const router = useRouter();
-
       return visibleTabs.map((tab: TabData, index: number) => {
          const url = tab.url;
          const label = tab.label;
