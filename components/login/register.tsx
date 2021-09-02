@@ -172,7 +172,7 @@ export function RegisterForm({ goToLogin }: { goToLogin: () => void }) {
          >
             Create My Account
          </Button>
-         <Text color="var(--color-gray-5)" fontSize="14px">
+         <Text color="var(--color-gray-5)" fontSize="14px" mt="8px">
             By joining iFixit, you agree to our{' '}
             <Link href="https://www.ifixit.com/Info/Privacy" color="var(--color-blue)">
                Privacy Policy
