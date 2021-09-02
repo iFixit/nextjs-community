@@ -34,12 +34,10 @@ export default function FooterComponent() {
                lg: 4,
             }}
             spacing="4"
-            px={{
-               base: 5,
-               sm: 10,
-            }}
             py="10"
             autoFlow="row"
+            maxW="998px"
+            margin={{ base: '0 5%', xl: '0 auto' }}
          >
             {links.map((linklist, index) => (
                <FooterMenuList key={index}>
@@ -109,13 +107,11 @@ export default function FooterComponent() {
                lg: 2,
             }}
             py="6"
-            px={{
-               base: 5,
-               sm: 10,
-            }}
             spacing={{
                base: 10,
             }}
+            w={{ base: '90%', xl: '998px' }}
+            margin="0 auto"
          >
             <Stack
                direction={{

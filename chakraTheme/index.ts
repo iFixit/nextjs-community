@@ -10,18 +10,9 @@ import Button from './components/Button';
 import Input from './components/Input';
 import Modal from './components/Modal';
 import Tabs from './components/Tabs';
+import { theme } from '@ifixit/react-components';
 
-const theme: Theme = extendTheme({
-   styles,
-   breakpoints,
-   colors,
-   space,
-   components: {
-      Button,
-      Input,
-      Modal,
-      Tabs,
-   },
-});
+theme.breakpoints = breakpoints;
+const extendedTheme: Theme = extendTheme(theme);
 
-export default theme;
+export default extendedTheme;
