@@ -10,9 +10,9 @@ const linkMappings = [
       { label: 'Newsletter', url: links.NEWSLETTER },
    ],
    [
-      { label: 'Press', url: links.PRESS },
+      { label: 'Blog', url: links.PRESS },
       { label: 'News', url: links.NEWS },
-      { label: 'Contribute', url: links.CONTRIBUTE },
+      { label: 'Community', url: links.CONTRIBUTE },
       { label: 'Pro Wholesale', url: links.PRO },
       { label: 'Retail Locator', url: links.RETAIL_LOCATOR },
       { label: 'For Manufacturers', url: links.MANUFACTURERS },
