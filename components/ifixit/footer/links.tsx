@@ -6,16 +6,16 @@ const linkMappings = [
       { label: 'Customer Support', url: links.HELP },
       { label: 'Careers', url: links.CAREERS },
       { label: 'Feedback', url: links.FEEDBACK },
-      { label: 'API', url: links.API },
       { label: 'Newsletter', url: links.NEWSLETTER },
+      { label: 'API', url: links.API },
    ],
    [
-      { label: 'Blog', url: links.PRESS },
-      { label: 'News', url: links.NEWS },
       { label: 'Community', url: links.CONTRIBUTE },
       { label: 'Pro Wholesale', url: links.PRO },
       { label: 'Retail Locator', url: links.RETAIL_LOCATOR },
       { label: 'For Manufacturers', url: links.MANUFACTURERS },
+      { label: 'Press', url: links.PRESS },
+      { label: 'Blog', url: links.NEWS },
    ],
 ];
 

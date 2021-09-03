@@ -24,6 +24,20 @@ import links from './links';
 import partners from './partners';
 import stores from './stores.json';
 
+function displayFooterLinks() {
+   return links.map((linklist, index) => (
+      <FooterMenuList key={index}>
+         {linklist.map(link => {
+            return (
+               <FooterMenuItem key={link.label}>
+                  <FooterMenuLink href={link.url}>{link.label}</FooterMenuLink>
+               </FooterMenuItem>
+            );
+         })}
+      </FooterMenuList>
+   ));
+}
+
 function FooterSocials() {
    return (
       <FooterMenuList>
@@ -65,6 +79,7 @@ function FooterPartners() {
             sm: 'span 3',
             lg: 'auto',
          }}
+         display={{ base: 'none', sm: 'grid' }}
       >
          {partners.map(partner => {
             return (
@@ -85,7 +100,7 @@ function FooterPartners() {
 
 export default function FooterComponent() {
    return (
-      <Footer>
+      <Footer bgColor="var(--color-black)">
          <SimpleGrid
             columns={{
                base: 1,
@@ -93,28 +108,16 @@ export default function FooterComponent() {
                lg: 4,
             }}
             spacing="4"
-            py="10"
+            p="64px 0 64px"
             autoFlow="row"
-            maxW="998px"
+            maxW="1000px"
             margin={{ base: '0 5%', xl: '0 auto' }}
          >
-            {links.map((linklist, index) => (
-               <FooterMenuList key={index}>
-                  {linklist.map(link => {
-                     return (
-                        <FooterMenuItem key={link.label}>
-                           <FooterMenuLink href={link.url}>{link.label}</FooterMenuLink>
-                        </FooterMenuItem>
-                     );
-                  })}
-               </FooterMenuList>
-            ))}
+            {displayFooterLinks()}
             <FooterSocials />
             <FooterPartners />
          </SimpleGrid>
-
          <Divider borderColor="trueGray.700" />
-
          <SimpleGrid
             columns={{
                base: 1,
@@ -124,7 +127,7 @@ export default function FooterComponent() {
             spacing={{
                base: 10,
             }}
-            w={{ base: '90%', xl: '998px' }}
+            w={{ base: '90%', xl: '1000px' }}
             margin="0 auto"
          >
             <Stack
