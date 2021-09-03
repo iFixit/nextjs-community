@@ -1,12 +1,8 @@
-import { SimpleGrid, Img, Divider, Stack, Menu, MenuList } from '@chakra-ui/react';
+import { SimpleGrid, Divider, Stack, Menu, MenuList } from '@chakra-ui/react';
 import {
    FlagIcon,
    Footer,
    FooterLink,
-   FooterMenuItem,
-   FooterMenuLink,
-   FooterMenuList,
-   FooterPartnerLink,
    Globe,
    StoreCurrency,
    StoreFlagBackdrop,
@@ -15,88 +11,16 @@ import {
    StoreName,
 } from '@ifixit/react-components';
 import React from 'react';
-import { footerLinks, socialLinks } from './links';
-import partners from './partners';
 import stores from './stores.json';
 import links from '../../../lib/links';
-
-function displayFooterLinks() {
-   return footerLinks.map((linklist, index) => (
-      <FooterMenuList key={index}>
-         {linklist.map(link => {
-            return (
-               <FooterMenuItem key={link.label}>
-                  <FooterMenuLink href={link.url}>{link.label}</FooterMenuLink>
-               </FooterMenuItem>
-            );
-         })}
-      </FooterMenuList>
-   ));
-}
-
-function FooterSocials() {
-   return (
-      <FooterMenuList>
-         {socialLinks.map((link, index) => {
-            return (
-               <FooterMenuItem key={index}>
-                  <FooterMenuLink href={link.url} icon={link.icon}>
-                     {link.label}
-                  </FooterMenuLink>
-               </FooterMenuItem>
-            );
-         })}
-      </FooterMenuList>
-   );
-}
-
-function FooterPartners() {
-   return (
-      <SimpleGrid
-         columns={3}
-         spacing="4"
-         gridColumnEnd={{
-            sm: 'span 3',
-            lg: 'auto',
-         }}
-         display={{ base: 'none', sm: 'grid' }}
-      >
-         {partners.map(partner => {
-            return (
-               <FooterPartnerLink key={partner.name} href="#">
-                  <Img
-                     h="full"
-                     mx="auto"
-                     objectFit="contain"
-                     src={partner.logo}
-                     alt={partner.name}
-                  />
-               </FooterPartnerLink>
-            );
-         })}
-      </SimpleGrid>
-   );
-}
+import DesktopView from './desktopView';
+import MobileView from './mobileView';
 
 export default function FooterComponent() {
    return (
       <Footer bgColor="var(--color-black)">
-         <SimpleGrid
-            columns={{
-               base: 1,
-               sm: 3,
-               lg: 4,
-            }}
-            spacing="4"
-            p="64px 0 64px"
-            autoFlow="row"
-            maxW="1000px"
-            margin={{ base: '0 5%', xl: '0 auto' }}
-         >
-            {displayFooterLinks()}
-            <FooterSocials />
-            <FooterPartners />
-         </SimpleGrid>
+         <DesktopView />
+         <MobileView />
          <Divider borderColor="trueGray.700" />
          <SimpleGrid
             columns={{

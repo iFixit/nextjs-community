@@ -5,31 +5,109 @@ import {
    InstagramLogo,
    YoutubeLogo,
    RepairOrgLogo,
+   FooterMenuItem,
+   FooterMenuLink,
+   FooterMenuList,
+   FooterPartnerLink,
 } from '@ifixit/react-components';
+import React from 'react';
+import { Img, SimpleGrid } from '@chakra-ui/react';
+import partners from './partners';
 
-export const footerLinks = [
-   [
-      { label: 'About Us', url: links.ABOUT_US },
-      { label: 'Customer Support', url: links.HELP },
-      { label: 'Careers', url: links.CAREERS },
-      { label: 'Feedback', url: links.FEEDBACK },
-      { label: 'Newsletter', url: links.NEWSLETTER },
-      { label: 'API', url: links.API },
-   ],
-   [
-      { label: 'Community', url: links.CONTRIBUTE },
-      { label: 'Pro Wholesale', url: links.PRO },
-      { label: 'Retail Locator', url: links.RETAIL_LOCATOR },
-      { label: 'For Manufacturers', url: links.MANUFACTURERS },
-      { label: 'Press', url: links.PRESS },
-      { label: 'Blog', url: links.NEWS },
-   ],
+const iFixitLinks = [
+   { label: 'About Us', url: links.ABOUT_US },
+   { label: 'Customer Support', url: links.HELP },
+   { label: 'Careers', url: links.CAREERS },
+   { label: 'Feedback', url: links.FEEDBACK },
+   { label: 'Newsletter', url: links.NEWSLETTER },
+   { label: 'API', url: links.API },
 ];
 
-export const socialLinks = [
+const resourcesLinks = [
+   { label: 'Community', url: links.CONTRIBUTE },
+   { label: 'Pro Wholesale', url: links.PRO },
+   { label: 'Retail Locator', url: links.RETAIL_LOCATOR },
+   { label: 'For Manufacturers', url: links.MANUFACTURERS },
+   { label: 'Press', url: links.PRESS },
+   { label: 'Blog', url: links.NEWS },
+];
+
+const socialLinks = [
    { label: 'Facebook', url: links.FACEBOOK, icon: FacebookLogo },
    { label: 'Twitter', url: links.TWITTER, icon: TwitterLogo },
    { label: 'Instagram', url: links.INSTAGRAM, icon: InstagramLogo },
    { label: 'YouTube', url: links.YOUTUBE, icon: YoutubeLogo },
    { label: 'Repair.org', url: links.REPAIR_ORG, icon: RepairOrgLogo },
 ];
+
+export function IfixitLinks() {
+   return (
+      <FooterMenuList border="none">
+         {iFixitLinks.map(link => {
+            return (
+               <FooterMenuItem key={link.label}>
+                  <FooterMenuLink href={link.url}>{link.label}</FooterMenuLink>
+               </FooterMenuItem>
+            );
+         })}
+      </FooterMenuList>
+   );
+}
+
+export function ResourcesLinks() {
+   return (
+      <FooterMenuList border="none">
+         {resourcesLinks.map(link => {
+            return (
+               <FooterMenuItem key={link.label}>
+                  <FooterMenuLink href={link.url}>{link.label}</FooterMenuLink>
+               </FooterMenuItem>
+            );
+         })}
+      </FooterMenuList>
+   );
+}
+
+export function SocialLinks() {
+   return (
+      <FooterMenuList border="none">
+         {socialLinks.map((link, index) => {
+            return (
+               <FooterMenuItem key={index}>
+                  <FooterMenuLink href={link.url} icon={link.icon}>
+                     {link.label}
+                  </FooterMenuLink>
+               </FooterMenuItem>
+            );
+         })}
+      </FooterMenuList>
+   );
+}
+
+export function PartnerLinks() {
+   return (
+      <SimpleGrid
+         columns={3}
+         spacing="4"
+         gridColumnEnd={{
+            sm: 'span 3',
+            lg: 'auto',
+         }}
+         display={{ base: 'none', sm: 'grid' }}
+      >
+         {partners.map(partner => {
+            return (
+               <FooterPartnerLink key={partner.name} href="#">
+                  <Img
+                     h="full"
+                     mx="auto"
+                     objectFit="contain"
+                     src={partner.logo}
+                     alt={partner.name}
+                  />
+               </FooterPartnerLink>
+            );
+         })}
+      </SimpleGrid>
+   );
+}
