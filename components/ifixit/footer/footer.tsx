@@ -24,6 +24,65 @@ import links from './links';
 import partners from './partners.json';
 import stores from './stores.json';
 
+function FooterSocials() {
+   return (
+      <FooterMenuList>
+         <FooterMenuItem>
+            <FooterMenuLink href="#" icon={FacebookLogo}>
+               Facebook
+            </FooterMenuLink>
+         </FooterMenuItem>
+         <FooterMenuItem>
+            <FooterMenuLink href="#" icon={TwitterLogo}>
+               Twitter
+            </FooterMenuLink>
+         </FooterMenuItem>
+         <FooterMenuItem>
+            <FooterMenuLink href="#" icon={InstagramLogo}>
+               Instagram
+            </FooterMenuLink>
+         </FooterMenuItem>
+         <FooterMenuItem>
+            <FooterMenuLink href="#" icon={YoutubeLogo}>
+               Youtube
+            </FooterMenuLink>
+         </FooterMenuItem>
+         <FooterMenuItem>
+            <FooterMenuLink href="#" icon={RepairOrgLogo}>
+               Repair.org
+            </FooterMenuLink>
+         </FooterMenuItem>
+      </FooterMenuList>
+   );
+}
+
+function FooterPartners() {
+   return (
+      <SimpleGrid
+         columns={3}
+         spacing="4"
+         gridColumnEnd={{
+            sm: 'span 3',
+            lg: 'auto',
+         }}
+      >
+         {partners.map(partner => {
+            return (
+               <FooterPartnerLink key={partner.name} href="#">
+                  <Img
+                     h="full"
+                     mx="auto"
+                     objectFit="contain"
+                     src={partner.logo}
+                     alt={partner.name}
+                  />
+               </FooterPartnerLink>
+            );
+         })}
+      </SimpleGrid>
+   );
+}
+
 export default function FooterComponent() {
    return (
       <Footer>
@@ -50,57 +109,12 @@ export default function FooterComponent() {
                   })}
                </FooterMenuList>
             ))}
-            <FooterMenuList>
-               <FooterMenuItem>
-                  <FooterMenuLink href="#" icon={FacebookLogo}>
-                     Facebook
-                  </FooterMenuLink>
-               </FooterMenuItem>
-               <FooterMenuItem>
-                  <FooterMenuLink href="#" icon={TwitterLogo}>
-                     Twitter
-                  </FooterMenuLink>
-               </FooterMenuItem>
-               <FooterMenuItem>
-                  <FooterMenuLink href="#" icon={InstagramLogo}>
-                     Instagram
-                  </FooterMenuLink>
-               </FooterMenuItem>
-               <FooterMenuItem>
-                  <FooterMenuLink href="#" icon={YoutubeLogo}>
-                     Youtube
-                  </FooterMenuLink>
-               </FooterMenuItem>
-               <FooterMenuItem>
-                  <FooterMenuLink href="#" icon={RepairOrgLogo}>
-                     Repair.org
-                  </FooterMenuLink>
-               </FooterMenuItem>
-            </FooterMenuList>
-            <SimpleGrid
-               columns={3}
-               spacing="4"
-               gridColumnEnd={{
-                  sm: 'span 3',
-                  lg: 'auto',
-               }}
-            >
-               {partners.map(partner => {
-                  return (
-                     <FooterPartnerLink key={partner.name} href="#">
-                        <Img
-                           h="full"
-                           mx="auto"
-                           objectFit="contain"
-                           src={partner.logo}
-                           alt={partner.name}
-                        />
-                     </FooterPartnerLink>
-                  );
-               })}
-            </SimpleGrid>
+            <FooterSocials />
+            <FooterPartners />
          </SimpleGrid>
+
          <Divider borderColor="trueGray.700" />
+
          <SimpleGrid
             columns={{
                base: 1,
