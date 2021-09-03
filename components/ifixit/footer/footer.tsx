@@ -21,7 +21,7 @@ import {
 } from '@ifixit/react-components';
 import React from 'react';
 import links from './links';
-import partners from './partners.json';
+import partners from './partners';
 import stores from './stores.json';
 
 function FooterSocials() {
