@@ -1,6 +1,5 @@
 import { SimpleGrid, Img, Divider, Stack, Menu, MenuList } from '@chakra-ui/react';
 import {
-   FacebookLogo,
    FlagIcon,
    Footer,
    FooterLink,
@@ -9,23 +8,20 @@ import {
    FooterMenuList,
    FooterPartnerLink,
    Globe,
-   InstagramLogo,
-   RepairOrgLogo,
    StoreCurrency,
    StoreFlagBackdrop,
    StoreMenuButton,
    StoreMenuItem,
    StoreName,
-   TwitterLogo,
-   YoutubeLogo,
 } from '@ifixit/react-components';
 import React from 'react';
-import links from './links';
+import { footerLinks, socialLinks } from './links';
 import partners from './partners';
 import stores from './stores.json';
+import links from '../../../lib/links';
 
 function displayFooterLinks() {
-   return links.map((linklist, index) => (
+   return footerLinks.map((linklist, index) => (
       <FooterMenuList key={index}>
          {linklist.map(link => {
             return (
@@ -41,31 +37,15 @@ function displayFooterLinks() {
 function FooterSocials() {
    return (
       <FooterMenuList>
-         <FooterMenuItem>
-            <FooterMenuLink href="#" icon={FacebookLogo}>
-               Facebook
-            </FooterMenuLink>
-         </FooterMenuItem>
-         <FooterMenuItem>
-            <FooterMenuLink href="#" icon={TwitterLogo}>
-               Twitter
-            </FooterMenuLink>
-         </FooterMenuItem>
-         <FooterMenuItem>
-            <FooterMenuLink href="#" icon={InstagramLogo}>
-               Instagram
-            </FooterMenuLink>
-         </FooterMenuItem>
-         <FooterMenuItem>
-            <FooterMenuLink href="#" icon={YoutubeLogo}>
-               Youtube
-            </FooterMenuLink>
-         </FooterMenuItem>
-         <FooterMenuItem>
-            <FooterMenuLink href="#" icon={RepairOrgLogo}>
-               Repair.org
-            </FooterMenuLink>
-         </FooterMenuItem>
+         {socialLinks.map((link, index) => {
+            return (
+               <FooterMenuItem key={index}>
+                  <FooterMenuLink href={link.url} icon={link.icon}>
+                     {link.label}
+                  </FooterMenuLink>
+               </FooterMenuItem>
+            );
+         })}
       </FooterMenuList>
    );
 }
@@ -148,7 +128,7 @@ export default function FooterComponent() {
                   <StoreMenuButton
                      icon={
                         <StoreFlagBackdrop>
-                           <FlagIcon storeCode="US" />
+                           <FlagIcon storecode="US" />
                         </StoreFlagBackdrop>
                      }
                   >
@@ -158,7 +138,7 @@ export default function FooterComponent() {
                      {stores.map(store => {
                         return (
                            <StoreMenuItem key={store.storeCode} as="a" href={store.url}>
-                              <FlagIcon storeCode={store.storeCode.toUpperCase()} />
+                              <FlagIcon storecode={store.storeCode.toUpperCase()} />
                               <StoreName>{store.name}</StoreName>
                               <StoreCurrency>{store.currency}</StoreCurrency>
                            </StoreMenuItem>
@@ -166,7 +146,7 @@ export default function FooterComponent() {
                      })}
                   </MenuList>
                </Menu>
-               <FooterLink href="#" icon={Globe}>
+               <FooterLink href={links.TRANSLATE} icon={Globe}>
                   Help translate
                </FooterLink>
             </Stack>
@@ -185,7 +165,7 @@ export default function FooterComponent() {
                   sm: 4,
                }}
             >
-               <FooterLink href="#">Licensed under creative commons</FooterLink>
+               <FooterLink href={links.LICENSING}>Licensed under creative commons</FooterLink>
                <Divider
                   opacity={{
                      base: 1,
@@ -194,7 +174,7 @@ export default function FooterComponent() {
                   orientation="vertical"
                   borderColor="trueGray.700"
                />
-               <FooterLink href="#">Privacy</FooterLink>
+               <FooterLink href={links.PRIVACY}>Privacy</FooterLink>
                <Divider
                   opacity={{
                      base: 1,
@@ -203,7 +183,7 @@ export default function FooterComponent() {
                   orientation="vertical"
                   borderColor="trueGray.700"
                />
-               <FooterLink href="#">Legal</FooterLink>
+               <FooterLink href={links.TERMS_OF_USE}>Legal</FooterLink>
             </Stack>
          </SimpleGrid>
       </Footer>

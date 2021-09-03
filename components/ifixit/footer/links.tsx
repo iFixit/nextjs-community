@@ -1,6 +1,13 @@
 import links from '../../../lib/links';
+import {
+   FacebookLogo,
+   TwitterLogo,
+   InstagramLogo,
+   YoutubeLogo,
+   RepairOrgLogo,
+} from '@ifixit/react-components';
 
-const linkMappings = [
+export const footerLinks = [
    [
       { label: 'About Us', url: links.ABOUT_US },
       { label: 'Customer Support', url: links.HELP },
@@ -19,4 +26,10 @@ const linkMappings = [
    ],
 ];
 
-export default linkMappings;
+export const socialLinks = [
+   { label: 'Facebook', url: links.FACEBOOK, icon: FacebookLogo },
+   { label: 'Twitter', url: links.TWITTER, icon: TwitterLogo },
+   { label: 'Instagram', url: links.INSTAGRAM, icon: InstagramLogo },
+   { label: 'YouTube', url: links.YOUTUBE, icon: YoutubeLogo },
+   { label: 'Repair.org', url: links.REPAIR_ORG, icon: RepairOrgLogo },
+];
