@@ -11,7 +11,7 @@ import { IfixitLinks, ResourcesLinks, SocialLinks } from './links';
 
 export default function MobileView() {
    return (
-      <Accordion allowToggle display={{ base: 'unset', md: 'none' }} borderColor="trueGray.700">
+      <Accordion allowToggle display={{ base: 'unset', sm: 'none' }} borderColor="trueGray.700">
          <AccordionItem>
             <AccordionButton height="48px">
                <Box flex="1" textAlign="left" fontWeight="bold">

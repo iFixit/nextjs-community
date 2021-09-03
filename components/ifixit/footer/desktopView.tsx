@@ -11,11 +11,11 @@ export default function DesktopView() {
             lg: 4,
          }}
          spacing="4"
-         p="64px 0 64px"
+         p="48px 0"
          autoFlow="row"
          maxW="1000px"
          margin={{ base: '0 5%', xl: '0 auto' }}
-         display={{ base: 'none', md: 'grid' }}
+         display={{ base: 'none', sm: 'grid' }}
       >
          <IfixitLinks />
          <ResourcesLinks />
