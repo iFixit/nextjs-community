@@ -11,10 +11,10 @@ import { IfixitLinks, ResourcesLinks, SocialLinks } from './links';
 
 export default function MobileView() {
    return (
-      <Accordion allowToggle display={{ base: 'unset', md: 'none' }}>
-         <AccordionItem border="none">
-            <AccordionButton>
-               <Box flex="1" textAlign="left">
+      <Accordion allowToggle display={{ base: 'unset', md: 'none' }} borderColor="trueGray.700">
+         <AccordionItem>
+            <AccordionButton height="48px">
+               <Box flex="1" textAlign="left" fontWeight="bold">
                   iFixit
                </Box>
                <AccordionIcon />
@@ -24,8 +24,8 @@ export default function MobileView() {
             </AccordionPanel>
          </AccordionItem>
          <AccordionItem>
-            <AccordionButton>
-               <Box flex="1" textAlign="left">
+            <AccordionButton height="48px">
+               <Box flex="1" textAlign="left" fontWeight="bold">
                   Resources
                </Box>
                <AccordionIcon />
@@ -35,8 +35,8 @@ export default function MobileView() {
             </AccordionPanel>
          </AccordionItem>
          <AccordionItem>
-            <AccordionButton>
-               <Box flex="1" textAlign="left">
+            <AccordionButton height="48px">
+               <Box flex="1" textAlign="left" fontWeight="bold">
                   Social
                </Box>
                <AccordionIcon />
