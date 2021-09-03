@@ -15,6 +15,7 @@ import stores from './stores.json';
 import links from '../../../lib/links';
 import DesktopView from './desktopView';
 import MobileView from './mobileView';
+import { CountryCode } from '@ifixit/react-components';
 
 export default function FooterComponent() {
    return (
@@ -52,7 +53,7 @@ export default function FooterComponent() {
                   <StoreMenuButton
                      icon={
                         <StoreFlagBackdrop>
-                           <FlagIcon storecode="US" />
+                           <FlagIcon code={CountryCode.US} />
                         </StoreFlagBackdrop>
                      }
                   >
@@ -62,7 +63,7 @@ export default function FooterComponent() {
                      {stores.map(store => {
                         return (
                            <StoreMenuItem key={store.storeCode} as="a" href={store.url}>
-                              <FlagIcon storecode={store.storeCode.toUpperCase()} />
+                              <FlagIcon code={store.storeCode.toUpperCase() as CountryCode} />
                               <StoreName>{store.name}</StoreName>
                               <StoreCurrency>{store.currency}</StoreCurrency>
                            </StoreMenuItem>
