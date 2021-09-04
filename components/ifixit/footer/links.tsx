@@ -44,7 +44,7 @@ const socialLinks = [
 export function IfixitLinks() {
    return (
       <FooterMenuList border="none">
-         <FooterMenuItem mb="10px" display={{ base: 'none', sm: 'unset' }}>
+         <FooterMenuItem mb="10px" display={{ base: 'none', sm: 'inherit' }}>
             <Heading fontSize="14px" color="trueGray.100">
                iFixit
             </Heading>
@@ -65,7 +65,7 @@ export function IfixitLinks() {
 export function ResourcesLinks() {
    return (
       <FooterMenuList border="none">
-         <FooterMenuItem mb="10px" display={{ base: 'none', sm: 'unset' }}>
+         <FooterMenuItem mb="10px" display={{ base: 'none', sm: 'inherit' }}>
             <Heading fontSize="14px" color="trueGray.100" >
                Resources
             </Heading>
@@ -86,7 +86,7 @@ export function ResourcesLinks() {
 export function SocialLinks() {
    return (
       <FooterMenuList border="none">
-         <FooterMenuItem mb="10px"  display={{ base: 'none', sm: 'unset' }}>
+         <FooterMenuItem mb="10px"  display={{ base: 'none', sm: 'inherit' }}>
             <Heading fontSize="14px" color="trueGray.100">
                Social
             </Heading>
