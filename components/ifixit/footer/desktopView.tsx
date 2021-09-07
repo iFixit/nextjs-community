@@ -1,8 +1,12 @@
-import { SimpleGrid } from '@chakra-ui/react';
+import { Heading, SimpleGrid } from '@chakra-ui/react';
+import { FooterMenuList, FooterMenuItem } from '@ifixit/react-components';
 import React from 'react';
-import { IfixitLinks, ResourcesLinks, SocialLinks, PartnerLinks } from './links';
+import { Partners } from './links';
+import { getFooterCategories, listCategory } from './links';
 
 export default function DesktopView() {
+   const categories = getFooterCategories();
+
    return (
       <SimpleGrid
          columns={{
@@ -17,10 +21,17 @@ export default function DesktopView() {
          width={{ base: '90%', xl: '1000px' }}
          display={{ base: 'none', sm: 'grid' }}
       >
-         <IfixitLinks />
-         <ResourcesLinks />
-         <SocialLinks />
-         <PartnerLinks />
+         {categories.map(category => (
+            <FooterMenuList key={category.title} border="none" pb="0">
+               <FooterMenuItem mb="10px" display={{ base: 'none', sm: 'inherit' }}>
+                  <Heading fontSize="14px" color="trueGray.100">
+                     {category.title}
+                  </Heading>
+               </FooterMenuItem>
+               {listCategory(category)}
+            </FooterMenuList>
+         ))}
+         <Partners />
       </SimpleGrid>
    );
 }

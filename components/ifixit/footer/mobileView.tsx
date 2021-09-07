@@ -7,44 +7,26 @@ import {
 } from '@chakra-ui/accordion';
 import { Box } from '@chakra-ui/layout';
 import React from 'react';
-import { IfixitLinks, ResourcesLinks, SocialLinks } from './links';
+import { getFooterCategories, listCategory } from './links';
 
 export default function MobileView() {
+   const categories = getFooterCategories();
+
    return (
       <Accordion allowToggle display={{ base: 'unset', sm: 'none' }} borderColor="trueGray.700">
-         <AccordionItem>
-            <AccordionButton height="48px">
-               <Box flex="1" textAlign="left" fontWeight="bold">
-                  iFixit
-               </Box>
-               <AccordionIcon />
-            </AccordionButton>
-            <AccordionPanel>
-               <IfixitLinks />
-            </AccordionPanel>
-         </AccordionItem>
-         <AccordionItem>
-            <AccordionButton height="48px">
-               <Box flex="1" textAlign="left" fontWeight="bold">
-                  Resources
-               </Box>
-               <AccordionIcon />
-            </AccordionButton>
-            <AccordionPanel>
-               <ResourcesLinks />
-            </AccordionPanel>
-         </AccordionItem>
-         <AccordionItem>
-            <AccordionButton height="48px">
-               <Box flex="1" textAlign="left" fontWeight="bold">
-                  Social
-               </Box>
-               <AccordionIcon />
-            </AccordionButton>
-            <AccordionPanel>
-               <SocialLinks />
-            </AccordionPanel>
-         </AccordionItem>
+         {categories.map(category => {
+            return (
+               <AccordionItem key={category.title}>
+                  <AccordionButton height="48px">
+                     <Box flex="1" textAlign="left" fontWeight="bold">
+                        {category.title}
+                     </Box>
+                     <AccordionIcon />
+                  </AccordionButton>
+                  <AccordionPanel>{listCategory(category)}</AccordionPanel>
+               </AccordionItem>
+            );
+         })}
       </Accordion>
    );
 }
