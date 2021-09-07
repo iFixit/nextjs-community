@@ -79,15 +79,13 @@ export function Partners() {
       <SimpleGrid
          columns={3}
          spacing="4"
-         gridColumnEnd={{
-            sm: 'span 3',
-            lg: 'auto',
-         }}
+         p={{ base: '0 0 48px', lg: '48px 0 72px' }}
          display={{ base: 'none', sm: 'grid' }}
+         maxW={{ base: 'unset', lg: '350px' }}
       >
          {partners.map(partner => {
             return (
-               <FooterPartnerLink key={partner.name} href="#">
+               <FooterPartnerLink key={partner.name} pointerEvents="none" p="12px">
                   <Img
                      h="full"
                      mx="auto"
