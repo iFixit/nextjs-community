@@ -13,8 +13,8 @@ export default function DesktopView() {
          spacing="4"
          p="48px 0"
          autoFlow="row"
-         maxW="1000px"
          margin={{ base: '0 5%', xl: '0 auto' }}
+         width={{ base: '90%', xl: '1000px' }}
          display={{ base: 'none', sm: 'grid' }}
       >
          <IfixitLinks />

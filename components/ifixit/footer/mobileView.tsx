@@ -19,7 +19,7 @@ export default function MobileView() {
                </Box>
                <AccordionIcon />
             </AccordionButton>
-            <AccordionPanel pb={4}>
+            <AccordionPanel>
                <IfixitLinks />
             </AccordionPanel>
          </AccordionItem>
@@ -30,7 +30,7 @@ export default function MobileView() {
                </Box>
                <AccordionIcon />
             </AccordionButton>
-            <AccordionPanel pb={4}>
+            <AccordionPanel>
                <ResourcesLinks />
             </AccordionPanel>
          </AccordionItem>
@@ -41,7 +41,7 @@ export default function MobileView() {
                </Box>
                <AccordionIcon />
             </AccordionButton>
-            <AccordionPanel pb={4}>
+            <AccordionPanel>
                <SocialLinks />
             </AccordionPanel>
          </AccordionItem>

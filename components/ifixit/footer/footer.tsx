@@ -1,4 +1,4 @@
-import { SimpleGrid, Divider, Stack, Menu, MenuList } from '@chakra-ui/react';
+import { SimpleGrid, Divider, Stack, Menu, MenuList, HStack } from '@chakra-ui/react';
 import {
    FlagIcon,
    Footer,
@@ -76,6 +76,7 @@ export default function FooterComponent() {
                </FooterLink>
             </Stack>
             <Stack
+               align="center"
                justify={{
                   base: 'flex-start',
                   sm: 'center',
@@ -90,25 +91,22 @@ export default function FooterComponent() {
                   sm: 4,
                }}
             >
-               <FooterLink href={links.LICENSING}>Licensed under creative commons</FooterLink>
-               <Divider
-                  opacity={{
-                     base: 1,
-                     sm: 1,
+               <FooterLink color="trueGray.400" href={links.LICENSING}>
+                  Licensed under creative commons
+               </FooterLink>
+               <HStack
+                  spacing={{
+                     base: 2,
+                     sm: 4,
                   }}
-                  orientation="vertical"
-                  borderColor="trueGray.700"
-               />
-               <FooterLink href={links.PRIVACY}>Privacy</FooterLink>
-               <Divider
-                  opacity={{
-                     base: 1,
-                     sm: 1,
-                  }}
-                  orientation="vertical"
-                  borderColor="trueGray.700"
-               />
-               <FooterLink href={links.TERMS_OF_USE}>Legal</FooterLink>
+               >
+                  <FooterLink color="trueGray.400" href={links.PRIVACY}>
+                     Privacy
+                  </FooterLink>
+                  <FooterLink color="trueGray.400" href={links.TERMS_OF_USE}>
+                     Legal
+                  </FooterLink>
+               </HStack>
             </Stack>
          </SimpleGrid>
       </Footer>
