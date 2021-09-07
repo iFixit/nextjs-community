@@ -66,7 +66,7 @@ export function listCategory(category: Category) {
    return category.links.map(link => {
       return (
          <FooterMenuItem key={link.label} listStyleType="none">
-            <FooterMenuLink color="trueGray.400" href={link.url}>
+            <FooterMenuLink color="trueGray.400" href={link.url} icon={link.icon}>
                {link.label}
             </FooterMenuLink>
          </FooterMenuItem>

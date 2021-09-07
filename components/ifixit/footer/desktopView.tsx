@@ -18,7 +18,7 @@ export default function DesktopView() {
                base: 1,
                sm: 3,
             }}
-            spacing="64px"
+            spacing="52px"
             p="48px 0"
             autoFlow="row"
             display={{ base: 'none', sm: 'grid' }}
