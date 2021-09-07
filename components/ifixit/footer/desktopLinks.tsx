@@ -4,7 +4,7 @@ import React from 'react';
 import { Partners } from './links';
 import { getFooterCategories, listCategory } from './links';
 
-export default function DesktopView() {
+export default function DesktopLinks() {
    const categories = getFooterCategories();
 
    return (
