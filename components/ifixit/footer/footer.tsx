@@ -11,7 +11,7 @@ import {
    StoreName,
 } from '@ifixit/react-components';
 import React from 'react';
-import stores from './stores.json';
+import stores from './stores';
 import links from '../../../lib/links';
 import DesktopLinks from './desktopLinks';
 import MobileLinks from './mobileLinks';
