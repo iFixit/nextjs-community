@@ -24,23 +24,24 @@ interface TabData {
 
 export default function NavigationDisplay({
    title,
+   privileges,
    setUser,
-   isLoggedIn,
-   isMod,
+   patrolEnabled,
 }: {
    title: string;
+   privileges: { isLoggedIn: boolean; isMod: boolean; canPatrol: boolean };
    setUser: React.Dispatch<React.SetStateAction<{}>>;
-   isLoggedIn: boolean;
-   isMod: boolean;
+   patrolEnabled: boolean;
 }) {
    const [onIfixit, setOnIfixit] = useState(true);
    const { isOpen, onOpen, onClose } = useDisclosure();
    const router = useRouter();
-   const patrolEnabled = true;
    const visibleTabs = getTabs();
 
    useEffect(() => {
-      // setOnIfixit(window.location.hostname.toLowerCase() == 'ifixit');
+      const iFixitURL = window.location.hostname.toLowerCase() == 'ifixit';
+      const testing = true;
+      setOnIfixit(testing || iFixitURL);
    }, []);
 
    function getTabs(): Array<TabData> {
@@ -78,12 +79,12 @@ export default function NavigationDisplay({
          {
             url: links.PATROL,
             label: 'Patrol',
-            showTab: isMod && patrolEnabled,
+            showTab: patrolEnabled && privileges.canPatrol,
          },
          {
             url: links.MODERATION,
             label: 'Moderation',
-            showTab: isMod,
+            showTab: privileges.isMod,
          },
       ].filter((tab: TabData) => tab.showTab);
    }
@@ -151,7 +152,7 @@ export default function NavigationDisplay({
                marginTop={{ base: 'var(--space-4)', md: 0 }}
             >
                <Button onClick={() => router.push(links.USE_GUIDELINES)}>How this Works</Button>
-               {!isLoggedIn && <Button onClick={onOpen}>Join the Community</Button>}
+               {!privileges.isLoggedIn && <Button onClick={onOpen}>Join the Community</Button>}
                <LoginModal isOpen={isOpen} onClose={onClose} setUser={setUser} />
             </ButtonGroup>
          </Flex>
@@ -182,7 +183,6 @@ export default function NavigationDisplay({
                <TabList>{ChakraTabs(title)}</TabList>
                <TabPanels display="none">{listTabPanelComponents()}</TabPanels>
             </Tabs>
-            {/* <Button onClick={isModerator}>asdf</Button> */}
          </Box>
       </React.Fragment>
    );

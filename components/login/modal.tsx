@@ -45,13 +45,7 @@ export default function LoginModal({
          case 'register':
             return <RegisterForm goToLogin={() => setMode('login')} />;
          default:
-            return (
-               <LoginForm
-                  goToReset={() => setMode('reset')}
-                  closeModal={onClose}
-                  setUser={setUser}
-               />
-            );
+            return <LoginForm goToReset={() => setMode('reset')} setUser={setUser} />;
       }
    }
 

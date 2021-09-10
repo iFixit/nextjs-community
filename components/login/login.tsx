@@ -34,11 +34,9 @@ export function LoginHeader({ goToRegister }: { goToRegister: () => void }) {
 
 export function LoginForm({
    goToReset,
-   closeModal,
    setUser,
 }: {
    goToReset: () => void;
-   closeModal: () => void;
    setUser: React.Dispatch<React.SetStateAction<{}>>;
 }) {
    const [login, setLogin] = useState<Login>({
@@ -65,12 +63,12 @@ export function LoginForm({
             .json()
             .then(data => ({ status: response.status, body: data }))
             .then(data => {
+               const response = data.body;
                const success = data.status < 400;
                if (success) {
-                  setUser(data.body);
+                  setUser(response);
                }
-               showFeedback(success, data.body.message, data.body.username);
-               return success;
+               showFeedback(success, response.message, response.username);
             })
       );
    }
@@ -95,9 +93,7 @@ export function LoginForm({
       <form
          onSubmit={event => {
             event.preventDefault();
-            if (performLogin()) {
-               closeModal();
-            }
+            performLogin();
          }}
       >
          <FormControl>
