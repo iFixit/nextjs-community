@@ -24,7 +24,12 @@ export default function LandingPage({
 
    useEffect(() => {
       async function updatePrivileges(id?: number) {
-         await fetch('https://bson.cominor.com/api/2.0/community/getUserPrivileges/' + id)
+         await fetch('https://bson.cominor.com/api/2.0/community/getUserPrivileges/', {
+            method: 'GET',
+            headers: {
+               Authorization: 'api ' + (user as any).authToken,
+            },
+         })
             .then(res => res.json())
             .then(data =>
                setPrivileges({
