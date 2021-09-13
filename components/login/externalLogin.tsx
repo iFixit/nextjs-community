@@ -1,4 +1,4 @@
-import { Button, Flex, Stack, Text } from '@chakra-ui/react';
+import { Button, Flex, Stack, Text, useToast } from '@chakra-ui/react';
 
 function GoogleIcon() {
    return (
@@ -29,6 +29,18 @@ function FacebookIcon() {
 }
 
 export default function ExternalLogin() {
+   const toast = useToast();
+
+   function showFailure() {
+      toast({
+         title: 'External login is not available yet. Try again later.',
+         position: 'top',
+         status: 'error',
+         duration: 7000,
+         isClosable: true,
+      });
+   }
+
    return (
       <Flex align="center" direction="column" w={{ base: '100%', md: '50%' }} mb="72px">
          <Text mt={{ base: '0', md: '48px' }} color="var(--color-gray-6)">
@@ -49,6 +61,7 @@ export default function ExternalLogin() {
                borderColor="#f5cac1"
                bgColor="#fcedea"
                _hover={{ color: 'white', bgColor: '#dd4d31' }}
+               onClick={showFailure}
             >
                Sign in with Google
             </Button>
@@ -61,6 +74,7 @@ export default function ExternalLogin() {
                borderColor="#c4cde2"
                bgColor="#ebeef5"
                _hover={{ color: 'white', bgColor: '#3a589d' }}
+               onClick={showFailure}
             >
                Sign in with Facebook
             </Button>
