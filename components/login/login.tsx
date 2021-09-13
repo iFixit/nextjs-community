@@ -52,7 +52,7 @@ export function LoginForm({
    const toast = useToast();
 
    async function performLogin() {
-      await fetch('https://bson.cominor.com/api/2.0/user/token', {
+      await fetch('https://www.ifixit.com/api/2.0/user/token', {
          method: 'POST',
          body: JSON.stringify(login),
          headers: {
