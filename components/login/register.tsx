@@ -55,7 +55,7 @@ export function RegisterForm({ goToLogin }: { goToLogin: () => void }) {
    const appId = 'be0ef8241c0be993ae73c407e6c536b9';
 
    async function register() {
-      await fetch('https://bson.cominor.com/api/2.0/users', {
+      await fetch('https://www.ifixit.com/api/2.0/users', {
          method: 'POST',
          body: JSON.stringify(user),
          headers: {
