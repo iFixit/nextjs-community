@@ -22,7 +22,7 @@ export default function Menus() {
          spacing={{ base: 3, xs: 1, sm: 10 }}
          align={{ base: 'center', xs: 'baseline' }}
          justify={{ base: 'space-between', sm: 'center' }}
-         px="18px"
+         px={{ base: '18px', sm: '0' }}
       >
          <Menu>
             <StoreMenuButton

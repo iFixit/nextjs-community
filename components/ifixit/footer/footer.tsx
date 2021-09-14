@@ -10,7 +10,7 @@ export default function FooterComponent() {
       <Footer bgColor="var(--color-black)">
          <DesktopView />
          <MobileView />
-         <Divider display={{ base: 'none', sm: 'unset' }} mt="14px" borderColor="trueGray.700" />
+         <Divider display={{ base: 'none', sm: 'unset' }} mt="18px" borderColor="trueGray.700" />
          <Legal />
       </Footer>
    );
