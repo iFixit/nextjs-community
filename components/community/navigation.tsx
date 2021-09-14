@@ -148,11 +148,16 @@ export default function NavigationDisplay({
             </Heading>
             <ButtonGroup
                variant="outline"
-               spacing="var(--space-4)"
+               spacing={{ base: 0, xs: 'var(--space-4)' }}
                marginTop={{ base: 'var(--space-4)', md: 0 }}
+               flexDirection={{ base: 'column', xs: 'row' }}
             >
                <Button onClick={() => router.push(links.USE_GUIDELINES)}>How this Works</Button>
-               {!privileges.isLoggedIn && <Button onClick={onOpen}>Join the Community</Button>}
+               {!privileges.isLoggedIn && (
+                  <Button onClick={onOpen} mt={{ base: '8px', xs: '0' }}>
+                     Join the Community
+                  </Button>
+               )}
                <LoginModal isOpen={isOpen} onClose={onClose} setUser={setUser} />
             </ButtonGroup>
          </Flex>
