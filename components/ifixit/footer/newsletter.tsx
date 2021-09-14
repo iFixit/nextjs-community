@@ -6,7 +6,7 @@ import React from 'react';
 
 export default function NewsletterSignup() {
    return (
-      <Flex direction="column" justify="flex-end" mt={{base:'12px', xl: '0'}}>
+      <Flex direction="column" justify="flex-end" mt={{ base: '12px', xl: '0' }}>
          <Heading
             mb="10px"
             fontSize="14px"

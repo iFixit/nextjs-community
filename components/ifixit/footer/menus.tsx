@@ -1,4 +1,4 @@
-import { HStack, Stack, Text } from '@chakra-ui/layout';
+import { Stack, Text } from '@chakra-ui/layout';
 import { Menu, MenuList } from '@chakra-ui/menu';
 import {
    CountryCode,
