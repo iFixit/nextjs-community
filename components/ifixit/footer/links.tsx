@@ -7,11 +7,8 @@ import {
    RepairOrgLogo,
    FooterMenuItem,
    FooterMenuLink,
-   FooterPartnerLink,
 } from '@ifixit/react-components';
 import * as React from 'react';
-import { Img, SimpleGrid } from '@chakra-ui/react';
-import partners from './partners';
 interface Category {
    title: string;
    links: Array<Link>;
@@ -72,30 +69,4 @@ export function listCategory(category: Category) {
          </FooterMenuItem>
       );
    });
-}
-
-export function Partners() {
-   return (
-      <SimpleGrid
-         columns={3}
-         spacing="4"
-         p={{ base: '0 0 48px', lg: '48px 0 72px' }}
-         display={{ base: 'none', sm: 'grid' }}
-         maxW={{ base: 'unset', lg: '350px' }}
-      >
-         {partners.map(partner => {
-            return (
-               <FooterPartnerLink key={partner.name} pointerEvents="none" p="12px">
-                  <Img
-                     h="full"
-                     mx="auto"
-                     objectFit="contain"
-                     src={partner.logo}
-                     alt={partner.name}
-                  />
-               </FooterPartnerLink>
-            );
-         })}
-      </SimpleGrid>
-   );
 }
