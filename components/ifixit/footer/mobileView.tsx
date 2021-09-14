@@ -10,7 +10,7 @@ import { getFooterCategories, listCategory } from './links';
 import Menus from './menus';
 import NewsletterSignup from './newsletter';
 
-export default function MobileView() {
+export default function View() {
    const categories = getFooterCategories();
 
    return (
