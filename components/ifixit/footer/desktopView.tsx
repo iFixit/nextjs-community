@@ -74,13 +74,14 @@ export default function View() {
       >
          <Links />
          <Stack
-            direction={{ base: 'column', lg: 'row' }}
+            direction={{ base: 'column-reverse', lg: 'row' }}
             justify="space-between"
             align={{ base: 'unset', lg: 'flex-end' }}
             spacing="18px"
+            mt={{ base: '28px', xl: 0 }}
          >
-            <NewsletterSignup />
             <Menus />
+            <NewsletterSignup />
          </Stack>
       </Box>
    );
