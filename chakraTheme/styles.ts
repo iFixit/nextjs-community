@@ -8,9 +8,11 @@ const styles = {
          lineHeight: cp.lineHeight.tight,
       },
       'h2, h3': {
+         color: cp.color.blue,
          fontWeight: cp.fontWeight.semiBold,
       },
       'h4, h5, h6': {
+         color: cp.color.blue,
          margin: `${cp.space[1]} 0 0`,
          fontSize: cp.fontSize[1],
       },
@@ -38,6 +40,7 @@ const styles = {
          marginBottom: '1em',
       },
       p: {
+         color: cp.color.blue,
          marginTop: cp.space[2], // matches base.less value
          marginBottom: cp.space[2], // matches base.less value
       },
@@ -46,12 +49,15 @@ const styles = {
          fontSize: 'unset',
       },
       'button, input, optgroup, select, textarea': {
+         color: cp.color.blue,
          fontSize: cp.fontSize[1],
       },
       'button, textarea': {
+         color: cp.color.blue,
          padding: `${cp.space[1]} ${cp.space[2]}`, // matches forms.less value
       },
       select: {
+         color: cp.color.blue,
          border: '1px solid #c1c1c1', // matches forms.less value
          fontFamily: 'inherit',
       },
