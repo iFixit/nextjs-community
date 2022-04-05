@@ -4,6 +4,7 @@ import cp from '@core-ds/primitives';
 const styles = {
    global: {
       'h1, h2, h3': {
+         color: cp.color.blue,
          lineHeight: cp.lineHeight.tight,
       },
       'h2, h3': {
